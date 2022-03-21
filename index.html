@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>Ola</title>
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <style>
+    table,th,td{border: 2px solid black}
+    </style>
+  </head>
+  <body>
+    Ola Mundo
+    <b>ola</b> <i>oi</i> <br>
+    <i><b>ola</b></i> <br>
+    <!-- comentário -->    
+    <i><b>ola</i></b> <!-- erro -->
+
+    <hr size="5px">
+    <h1>ola</h1>
+    <p>texto texto texto texto texto</p>
+    <h1>ola</h1><h2>ola</h2><h3>ola</h3><h4>ola</h4><h5>ola</h5><h6>ola</h6>
+
+    <ul type="square">
+      <li>um</li>
+      <li>dois</li>
+    </ul>
+
+    <ol type="1">
+      <li>uva
+      <li>maça
+    </ol>
+
+    <ul>
+      <li>
+        bla <b>um</b> bla bla
+      </li>
+      <li> Números
+        <ol>
+          <li>um</li> 
+          <li>dois</li>
+        </ol>
+      </li>
+    </ul>
+    
+    <table>
+      <tr>
+        <td>L1C1</td>
+        <td>L1C2</td>
+      </tr>
+      <tr>
+        <td>L2C1</td>
+        <td>L2C2</td>
+      </tr>
+    </table> <br> 
+
+    <table>
+      <tr>
+        <td colspan="2">L1</td>
+      </tr>
+      <tr>
+        <td>L2C1</td>
+        <td>L2C2</td>
+      </tr>
+    </table> <br>
+
+    <table>
+      <tr>
+        <td rowspan="2">C1</td>
+        <td>L1C2</td>
+      </tr>
+      <tr>
+        <td>L2C2</td>
+      </tr>
+    </table> <br>
+    
+    <table>
+      <caption>Lucro por Mês</caption>
+      <thead>
+        <tr>
+          <th>Mês</th>
+          <th>Lucro</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Janeiro</td>
+          <td>R$200</td>
+        </tr>
+        <tr>
+          <td>Fevereiro</td>
+          <td>R$50</td>
+        </tr>
+      </tbody>
+      <tfoot>
+        <tr>
+          <td>Total</td>
+          <td>R$250</td>
+        </tr>
+      </tfoot>
+    </table> <br>
+    
+    <figure>
+      <img src="./bbyd.png" alt="bebe yoda" width="184" height="128"/> <!-- bebe yoda --> 
+      <figcaption>Descrição maior blablabla</figcaption>
+    </figure>
+    
+    <a href="http://www.google.com">link google</a> <br>
+    <a href="http://www.google.com" target="_blank">link google (nova guia)</a> <br>
+    <a name="label">Conteúdo</a> <br>
+    <a href="#label">Ir para "Conteúdo"</a> <br> <br>
+
+    <form method="post" action="./recebe.php">
+      Nome:<input type="text" name="nome" size="10"> <br>
+      Senha: <input type="password" name="senha"> <br>
+      <input type="hidden" name="user" value="14">
+      Comentário: <br>
+      <textarea name="comentario" cols="20" rows="5">Digite a sua opinião</textarea> <!-- O chrome permite resize -->
+      Time: <br>
+      <input type="radio" name="time" value="Gre">Grêmio <br>
+      <input type="radio" name="time" value="Int">Inter <br>
+      SO: <br>
+      <input type="checkbox" name="so" value="win">Windows <br>
+      <input type="checkbox" name="so" value="lin">Linux <br>
+      Disciplinas: <br>
+      <select name="dis">
+        <option>W1</option>
+        <option>W2</option>
+      </select> <br>
+      Telefone:<input type="tel" name="telefone"> <br>
+      Procurar:<input type="search" name="procurar"> <br>
+      Email:<input type="email" name="email"> <br>
+      Link:<input type="url" name="url"> <br>
+      Data:<input type="date" name="dnasc"> <br>
+      Número:<input type="number" name="num"> <br>
+      Grau:<input type="range" name="grau"> <br>
+      Cor:<input type="color" name="cor"> <br>
+      Upload:<input type="file" multiple name="arq"> <br>
+      Intervalo:<input type="range" min="0" max="100" value="50" name="intervalo"> <br>
+      Nome:<input type="text" name="nome" size="10" maxlength="10" required> <br>
+      Senha:<input type="password" name="senha" autofocus placeholder="Senha" required maxlength="8"> <br>
+      <input type="checkbox" name="so" checked value="lin">Linux
+      <input type="checkbox" name="so" value="win">Windows <br>
+       <input type="submit" name="enviar" value="Enviar"> <br> 
+    </form>
+
+    <form>
+      <fieldset>
+
+        <legend>Dados:</legend>
+        <label for="n1">Nome:</label>
+        <input type="text" id="n1"> <br>
+
+        <label for="s1">Senha:</label>
+        <input type="password" id="s1">
+
+        <input type="submit" value="Enviar"> <br>
+        
+      </fieldset>
+    </form>
+
+    <audio controls="true" autoplay="true">
+      <source src="./mus.oga"/>
+      <source src="./mus.mp3"/> 
+    </audio>
+    
+    <video controls="true" autoplay="true" width="400" height="300">
+      <source src="./u.ogv"/>
+    </video> <br>
+    
+    <iframe width="560" height="315" src="https://www.youtube.com/embed/qtHcEfpYIow" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>
+    </iframe>
+
+  </body>
+</html>
