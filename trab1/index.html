@@ -1,0 +1,125 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="UTF-8">
+    <title>trab1</title>
+    <style> table,th,td {border: 1px solid black;} </style>
+  </head>
+  <body>
+    <header>
+    </header>
+    <nav>
+    </nav>
+    <main>
+      <h1>Trabalho 1</h1>
+      <hr> <!-- Coloquei hr para separar melhor os elementos pedidos no trabalho -->
+      <p><i><b>Informação aleatória: A entropia é uma grandeza termodinâmica que mede o grau de liberdade molecular de um sistema, e está associado ao seu número de configurações (ou microestados), ou seja, de quantas maneiras as partículas (átomos, íons ou moléculas) podem se distribuir em níveis energéticos quantizados, incluindo translacionais, vibracionais, rotacionais, e eletrônicos.</b></i></p> <br>
+      <hr>
+        <ul>
+          <li>Frutas        
+            <ol>
+              <li>Banana</li>
+              <li>Maçã</li>
+              <li>Abacate</li>
+            </ol>
+          </li>
+          <li> Vegetais
+            <ol type="I">
+              <li>Cebola</li>
+              <li>Pimentão
+                <ol type="a">
+                  <li>Verde</li>
+                  <li>Vermelho</li>  
+                  <li>Amarelo</li>     
+                </ol>
+              </li>
+              <li>Tomate</li>
+            </ol>
+          </li>
+        </ul>
+      <hr>
+        <table>
+          <caption><b>Lucro por Mês</b></caption>
+            <thead>
+              <tr>
+                <th><b>Mês</b></th>
+                <th colspan="2"><b>Frutas</b></th>
+              </tr>
+              <tr>
+                <th></th>
+                <th><b>Banana</b></th>
+                <th><b>Maçã</b></th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>Janeiro</td>
+                <td>100</td>
+                <td>50</td>
+              </tr>
+              <tr>
+                <td>Fevereiro</td>
+                <td>120</td>
+                <td>100</td>
+              </tr>
+              <tr>
+                <td>Março</td>
+                <td>120</td>
+                <td>150</td>
+              </tr>
+            </tbody>
+            <tfoot>
+              <tr>
+                <td>Total</td>
+                <td>340</td>
+                <td>300</td>
+              </tr>
+            </tfoot>
+        </table>
+      <hr>
+        <figure> <!-- Imagem 1 -->
+          <a href="https://ifrs.edu.br/">
+            <img src="imagem1.jpg" alt="Hange"/>     
+          </a>
+          <figcaption>Clique na imagem acima para ir ao site do IFRS</figcaption>
+        </figure> <!-- Imagem 2 -->
+        <figure>
+          <img src="img/imagem2.jpg" alt="Levi"/>     
+          <figcaption>Levi Ackerman</figcaption>
+        </figure>
+      <hr>
+        <form method="post" action="./recebe.php"> <!-- Para caso houvesse um arquivo para receber os dados do formulário -->
+          <fieldset>
+            <legend>Informações básicas</legend>
+            <label for="n">Nome:</label>
+            <input type="text" id="n"> <br>
+            <label for="sn">Sobrenome:</label>
+            <input type="text" id="sn"> <br>
+            <label for="dn">Data de nascimento:</label>
+            <input type="date" id="dn"> <br>
+            <label for="num">Telefone:</label>
+            <input type="tel" id="num" name="num" pattern="[0-9]{11}"> <br>
+            <input type ="submit" value = "Enviar"><br>
+          </fieldset>
+          <fieldset>
+            <legend>Pesquisa de satisfação</legend>
+            O que você achou do site? <br>
+            <input type="radio" id="pe" name="satis" value="PE">
+            <label for="pe">Péssimo</label> <br>
+            <input type="radio" id="pp" name="satis" value="PP">
+            <label for="pp">Podia ser pior...</label> <br>
+            <input type="radio" id="me" name="satis" value="ME">
+            <label for="me">Mediano</label> <br>
+            <input type="radio" id="mv" name="satis" value="MV">
+            <label for="mv">Mudou a minha vida!</label>            
+          </fieldset>
+        </form> 
+      <hr>
+        <iframe width="560" height="315" src="https://www.youtube.com/embed/R55JUpfyPeg" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen>         
+        </iframe> <!-- O sistema de implementação mostrado no AVA não funcionou neste caso, então foi incorporado o iframe pela opção "compartilhar" do youtube. A tag "frameborder" que vem junto ao código de incoporação do youtube foi retirado pois no validador da W3C constava um erro e uma recomendação de uso de CSS. -->
+    </main>        
+    <footer>
+    </footer>
+  </body>
+</html>
