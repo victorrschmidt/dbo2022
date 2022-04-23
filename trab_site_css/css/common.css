@@ -68,10 +68,6 @@ nav.menu a{
     color: white;     
 }
 
-nav.menu a:active{
-    color: blue; /* testar com github */ 
-}
-
 /* -------------------------- conteudo -------------------------- */
 
 main{
