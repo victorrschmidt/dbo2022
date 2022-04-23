@@ -1,0 +1,127 @@
+/* -------------------------- base -------------------------- */
+
+*{padding: 0px; border: 0px; margin: 0px;}
+
+html, body{
+    height:100%;
+}
+
+#background{
+    height: 1000px;
+    background-color: #006abf; 
+}
+
+/* -------------------------- header -------------------------- */
+
+header{
+    height: 90px; 
+    width: auto;
+    background-color: white;
+}
+
+img{
+    max-height: 100%;
+    max-width: 100%;
+}
+
+#logo_header{    
+    height: 100%;
+    float: left;
+    margin-right: 5px; 
+}
+
+#banner{
+    height: 100%;
+    float: left;
+}
+
+/* -------------------------- menus nav -------------------------- */
+
+nav.menu{
+    height: 40px;
+    width: auto;
+    background-color: #ef1c25;
+    padding-right: 25px;
+    padding-left: 25px;
+    border-bottom: solid black 4px; 
+}
+
+nav.menu li{
+    list-style: none;
+    float: left;
+    padding: 4px;
+    border: 2px solid #ef1c25;
+    margin: 4px;
+    font-size: 18px;
+}
+
+nav.menu li.direita{
+    float: right;   
+}
+
+nav.menu li:hover{
+    border: solid white 2px;
+}
+
+nav.menu a{
+    text-decoration: none;
+    color: white;     
+}
+
+nav.menu a:active{
+    color: blue; /* testar com github */ 
+}
+
+/* -------------------------- conteudo -------------------------- */
+
+main{
+    height: 750px;
+    width: 95%;
+    box-sizing: border-box;
+    background-color: white;
+    border: solid white 3px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+    margin-bottom: 15px;
+}
+
+/* -------------------------- footer -------------------------- */
+
+footer{
+    height: 75px;
+    width: 95%;
+    box-sizing: border-box;
+    background-color: white;
+    padding: 8px;
+    border: solid white 3px;
+    border-radius: 10px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+nav.rodape li{
+    list-style: none;
+    float: left;
+    margin-right: 26px;
+    font-size: 18px;  
+}
+
+nav.rodape a{
+    text-decoration: none;
+}
+
+#edit{
+    height: 50%;
+    width: 50%;
+    position: relative;
+    top: 8px;
+    font-size: 16px;  
+}
+
+#logo_footer{
+    height: 75px;   
+    position: absolute;
+    top: 900px;
+    left: 75%;
+}
