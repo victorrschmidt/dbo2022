@@ -1,0 +1,39 @@
+/*Todas as páginas que contém produtos referenciam este arquivo css*/
+
+*{padding: 0px; border: 0px; margin: 0px;}
+
+#produtos{
+    height: 550px;
+    width: 1150px;
+    box-sizing: border-box;
+    padding-left: 40px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+div.pr{
+    height: 220px;
+    width: 220px;
+    float: left;
+    border: solid #ef1c25 4px;
+    border-style: groove;
+    margin-right: 20px;
+    margin-left: 20px;
+    margin-bottom: 50px;
+}
+
+div.p_image{
+    height: 170px;
+    width: 220px;
+}
+
+div.p_info{
+    height: 50px;
+    width: 220px;
+    padding: 8px;
+}
+
+#produtos a{
+    text-decoration: none;
+    color: black;
+}
