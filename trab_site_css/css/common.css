@@ -92,6 +92,7 @@ main{
     width: 800px;
     margin-left: auto;
     margin-right: auto;
+    margin-bottom: 20px;
 }
 
 /* -------------------------- footer -------------------------- */
@@ -116,5 +117,8 @@ nav.rodape li{
     height: 50px;
     margin-left: 40px;
     margin-right: 20px;
-   
+}
+
+footer a:hover{
+   color: red; 
 }
