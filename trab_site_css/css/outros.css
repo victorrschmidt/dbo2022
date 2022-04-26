@@ -1,0 +1,57 @@
+/*Páginas que não contém produtos referenciam este arquivo css*/
+
+/* -------------------------- formulário -------------------------- */
+
+form{
+    float: left;
+    width: 600px;
+    background-color: #c3c3c3;
+    padding: 8px;
+}
+
+fieldset{
+    font-size: 20px;
+    padding: 15px;
+    border: solid black 2px;
+    margin-bottom: 8px;
+}
+
+/* -------------------------- outros -------------------------- */
+
+#frete_image{
+    height: 500px;
+    width: 500px;
+    float: left;
+    margin-left: 35px;
+}
+
+#atendentes{
+    height: 580px;
+    width: 500px;
+    float: left;
+    margin-left: 35px;
+}
+
+#atendentes_desc{
+    height: 60px;
+    width: 500px;
+    padding: 0;
+}
+
+#atendentes img{
+    height: 150px;
+    width: 200px;
+    float: left;
+}
+
+figure {
+    display: inline-block;
+    margin-right: 30px;
+    margin-bottom: 5px;
+}
+
+figcaption {
+    text-align: center;
+}
+
+
