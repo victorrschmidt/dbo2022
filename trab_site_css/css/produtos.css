@@ -1,7 +1,5 @@
 /*Todas as páginas que contém produtos referenciam este arquivo css*/
 
-*{padding: 0px; border: 0px; margin: 0px;}
-
 #produtos{
     height: 550px;
     width: 1150px;
