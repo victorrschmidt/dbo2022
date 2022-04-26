@@ -16,7 +16,77 @@ fieldset{
     margin-bottom: 8px;
 }
 
+/* -------------------------- tabela -------------------------- */
+
+#vendas{
+    height: 300px;
+    width: 400px;
+    border: dashed black 2px;
+    margin-left: auto;
+    margin-right: auto;
+    float: left;
+    text-align: center;
+}
+
+table caption{
+    font-size: 18px;
+    margin-bottom: 16px;
+}
+
+th{
+    border: solid #ef1c25 2px;
+    color: #ef1c25;
+}
+
+td{
+    border: solid #006abf 2px;
+}
+
+tfoot td{
+    border: solid #ffcc03 2px;
+}
+
+#lista_produtos{
+    height: 350px;
+    width: 160px;
+    padding-top: 6px;
+    padding-left: 30px;
+    border: dashed black 2px;
+    margin-left: 40px;
+    float: left;
+    font-size: 14px;
+}
+
+#lista_produtos li{
+    list-style-type: square;
+}
+
+#lista_produtos ol{
+    margin-bottom: 10px;
+}
+
+#lista_produtos ol li{
+    list-style-type: circle;
+}
+
 /* -------------------------- outros -------------------------- */
+
+#sobre{
+    height: 200px;
+    width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#sobre p{
+    font-size: 20px;
+    text-indent: 10px;
+}
+
+#sobre a{
+    text-decoration: none;
+    color: #ef1c25;
+}
 
 #frete_image{
     height: 500px;
