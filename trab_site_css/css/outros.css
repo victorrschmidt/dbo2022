@@ -124,4 +124,62 @@ figcaption {
     text-align: center;
 }
 
+#site_parceiro{
+    height: 150px;
+    width: 1100px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+#site_parceiro_icon{
+    height: 150px;
+    width: 150px;
+    float: left;
+}
+
+#site_parceiro p{
+    text-align: justify;
+    font-size: 22px;
+    padding: 12px;
+    text-indent: 10px;
+}
+
+#site_parceiro a{
+    text-decoration: none;
+    color: #ef1c25;
+}
+
+#programa{
+    height: 350px;
+    width: 1100px;
+    margin-top: 30px;
+    margin-left: auto;
+    margin-right: auto;
+    padding-top: 12px;
+    border: solid black;
+    border-left: 2px;
+    border-right: 2px;
+    border-bottom: 2px;
+}
+
+#programa a{
+    text-decoration: none;
+    color: #ef1c25;
+}
+    
+
+iframe{
+    float: left;
+}
+
+#programa p{
+    float: left;
+    height: 350px;
+    width: 500px;
+    padding: 8px;
+    text-align: justify;
+    text-indent: 6px;
+}
+
+
 
