@@ -1,0 +1,91 @@
+/* --------------------- Fontes --------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&family=Ubuntu:wght@300&display=swap');
+/*
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Ubuntu', sans-serif;
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100&family=Ubuntu:wght@300&display=swap');
+/*
+font-family: 'Montserrat Alternates', sans-serif;
+font-family: 'Ubuntu', sans-serif;
+*/
+
+/* --------------------- Tags padrão utilizadas por todas as páginas --------------------- */
+
+body.container-fluid{
+    background-color: #006abf;
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#top_container, footer.container{
+    background-color: white;
+}
+
+#menus{
+    background-color: #ef1c25;
+    border: solid black 4px;
+    border-right: 0;
+    border-left: 0;
+}
+
+main{
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#ltda{
+    font-size: 12px;
+}
+
+.blank_space_sm{
+    height: 5px;
+}
+
+.blank_space{
+    height: 30px;
+}
+
+#footer_nav{
+    flex-wrap: wrap;
+}
+
+#footer_logo{
+    width: 150px;
+}
+
+/* --------------------- Produtos --------------------- */
+
+.produto{
+    height: 100%;
+    border-style: ridge;
+    border: solid red 4px; 
+}
+
+.produto:hover{
+    background-color: #DFDFDF;
+}
+
+.produto img{
+    display: block;
+}
+
+.lista_produtos a:link{
+    color: black;
+}
+
+/* --------------------- Formulários --------------------- */
+
+
+
+
+
+
+
+
+
+
+
+
