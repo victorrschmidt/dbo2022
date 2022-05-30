@@ -78,6 +78,21 @@ main{
 
 /* --------------------- Formulários --------------------- */
 
+/* --------------------- Outros --------------------- */
+
+#sobre{
+    font-size: 18px;
+}
+
+#sobre a{
+    color: #ef1c25;
+}
+
+ul.sublista{
+    list-style-type: disc;
+}
+
+
 
 
 
