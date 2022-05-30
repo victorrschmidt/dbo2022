@@ -72,7 +72,7 @@ main{
     display: block;
 }
 
-.lista_produtos a:link{
+.lista_produtos a, .lista_produtos a:hover{
     color: black;
 }
 
