@@ -54,66 +54,95 @@
       <div class="mb-4">
         <img src="../../img/design/calcular_fretes.png" class="img-fluid" alt="calcular_fretes">
       </div>
-      <form class="m-5">
+      <form class="border rounded p-5 mx-4">
         <fieldset class="row mb-3">
           <legend>Identificação</legend>
           <div class="col-sm-5">
-            <label for="nome" class="form-label">Nome completo</label>
-            <input type="text" class="form-control" id="nome" autofocus required>
+            <div class="form-group">
+              <label for="nome" class="form-label">Nome completo</label>
+              <input type="text" class="form-control" id="nome" aria-describedby="seg" autofocus required>
+              <small id="seg" class="form-text text-muted">Suas informações pessoais são mantidas em segurança.</small>
+            </div>
           </div>
           <div class="col-sm-4">
-            <label for="email" class="form-label">Email</label>
-            <input type="email" class="form-control" id="email" required>
+            <div class="form-group">
+              <label for="email" class="form-label">Email</label>
+              <input type="email" class="form-control" id="email" required>
+            </div>
           </div>
           <div class="col-sm-3">
-            <label for="telefone" class="form-label">Telefone</label>
-            <input type="tel" class="form-control" id="telefone" required>
+            <div class="form-group">
+              <label for="telefone" class="form-label">Telefone</label>
+              <input type="tel" class="form-control" id="telefone" aria-describedby="ddd" required>
+              <small id="ddd" class="form-text text-muted">Inclua seu DDD.</small>
+            </div>
           </div>
         </fieldset>
         <fieldset class="row mb-3">
           <legend>Endereço</legend>
-          <div class="col-sm-3 mb-2">
-            <label for="estado" class="form-label">Estado</label>
-            <input type="text" class="form-control" id="estado" required>
-          </div>
-          <div class="col-sm-5 mb-2">
-            <label for="cidade" class="form-label">Cidade</label>
-            <input type="text" class="form-control" id="cidade" required>
+          <div class="col-sm-4 mb-2">
+            <div class="form-group">
+              <label for="estado" class="form-label">Estado</label>
+              <input type="text" class="form-control" id="estado" required>
+            </div>
           </div>
           <div class="col-sm-4 mb-2">
-            <label for="bairro" class="form-label">Bairro</label>
-            <input type="text" class="form-control" id="bairro" required>
+            <div class="form-group">
+              <label for="cidade" class="form-label">Cidade</label>
+              <input type="text" class="form-control" id="cidade" required>
+            </div>
+          </div>
+          <div class="col-sm-4 mb-2">
+            <div class="form-group">
+              <label for="bairro" class="form-label">Bairro</label>
+              <input type="text" class="form-control" id="bairro" required>
+            </div>
           </div>
           <div class="col-sm-3 mb-2">
-            <label for="rua" class="form-label">Rua</label>
-            <input type="text" class="form-control" id="rua" required>
+            <div class="form-group">
+              <label for="rua" class="form-label">Rua</label>
+              <input type="text" class="form-control" id="rua" required>
+            </div>
           </div>
           <div class="col-sm-2 mb-2">
-            <label for="numero" class="form-label">N°</label>
-            <input type="text" class="form-control" id="numero" required>
+            <div class="form-group">
+              <label for="numero" class="form-label">N°</label>
+              <input type="text" class="form-control" id="numero" required>
+            </div>
           </div>
           <div class="col-sm-7 mb-2">
-            <label for="complemento" class="form-label">Complemento</label>
-            <input type="text" class="form-control" id="complemento" placeholder="Condomínio, bloco, apartamento, estúdio...">
+            <div class="form-group">
+              <label for="complemento" class="form-label">Complemento</label>
+              <input type="text" class="form-control" id="complemento" aria-describedby="com">
+              <small id="com" class="form-text text-muted">Ex: Condomínio, bloco, apartamento, estúdio...</small>
+            </div>
           </div>
         </fieldset>
         <fieldset class="row mb-3">
           <legend>Forma de pagamento</legend>
           <div class="col-sm-2 form-check">
-            <input class="form-check-input" type="radio" name="pagamento" id="boleto" value="option2">
-            <label class="form-check-label" for="boleto">Boleto</label>
+            <div class="form-group">
+              <input class="form-check-input" type="radio" name="pagamento" id="boleto" value="option2">
+              <label class="form-check-label" for="boleto">Boleto</label>
+            </div>
           </div>
           <div class="col-sm-2 form-check">
-            <input class="form-check-input" type="radio" name="pagamento" id="pix" value="option3">
-            <label class="form-check-label" for="pix">Pix</label>
+            <div class="form-group">
+              <input class="form-check-input" type="radio" name="pagamento" id="pix" value="option3">
+              <label class="form-check-label" for="pix">Pix</label>
+            </div>
           </div>
           <div class="col-sm-2 form-check">
-            <input class="form-check-input" type="radio" name="pagamento" id="cartão" value="option1" checked>
-            <label class="form-check-label" for="cartão">Cartão</label>
+            <div class="form-group">
+              <input class="form-check-input" type="radio" name="pagamento" id="cartão" value="option1" checked>
+              <label class="form-check-label" for="cartão">Cartão</label>
+            </div>
           </div>
           <div class="col-sm-6">
-            <label for="card_num" class="form-label">Número do cartão</label>
-            <input type="number" class="form-control" id="card_num" placeholder="Insira se a forma de pagamento for cartão">
+            <div class="form-group">
+              <label for="card_num" class="form-label">Número do cartão</label>
+              <input type="number" class="form-control" id="card_num" placeholder="Insira se a forma de pagamento for cartão">
+            </div>
           </div>
         </fieldset>
         <button type="submit" class="btn btn-primary mt-5 mx-auto d-block">Finalizar compra</button>
