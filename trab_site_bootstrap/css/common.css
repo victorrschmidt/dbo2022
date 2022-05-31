@@ -80,12 +80,12 @@ main{
 
 /* --------------------- Outros --------------------- */
 
-#sobre{
+.sobre{
     font-size: 18px;
     text-indent: 20px;
 }
 
-#sobre a{
+.sobre a{
     color: #ef1c25;
 }
 
