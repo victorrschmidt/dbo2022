@@ -20,10 +20,6 @@ body.container-fluid{
     font-family: 'Ubuntu', sans-serif;
 }
 
-#top_container, footer.container{
-    background-color: white;
-}
-
 #menus{
     background-color: #ef1c25;
     border: solid black 4px;
