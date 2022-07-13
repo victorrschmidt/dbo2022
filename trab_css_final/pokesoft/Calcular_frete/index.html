@@ -1,0 +1,150 @@
+<!DOCTYPE HTML>
+<html lang="pt-br">
+<head>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta charset="UTF-8">
+  <title>Poké Soft - Calcular fretes</title>
+  <link rel=stylesheet type="text/css" href="../../css/common.css">
+  <link rel="icon" type="image/x-icon" href="../../img/design/favicon.ico?">
+</head>
+<body>
+  <div id="container"> 
+    <header>
+      <a href="https://victorrschmidt.github.io/dbo2022/trab_css_final/pokesoft/In%C3%ADcio/">
+        <img src="../../img/design/logo.png" id="header_logo" alt="logo">
+      </a>
+      <img src="../../img/design/banner.png" id="banner" alt="banner"> 
+    </header>
+    <nav id="menus">
+      <ul>
+        <li>
+          <a href="https://victorrschmidt.github.io/dbo2022/trab_css_final/pokesoft/In%C3%ADcio/">Início</a>
+        </li>
+        <li>
+          <a href="https://victorrschmidt.github.io/dbo2022/trab_css_final/pokesoft/Em_oferta/">Em oferta</a>
+        </li>
+        <li>
+          <a href="https://victorrschmidt.github.io/dbo2022/trab_css_final/pokesoft/Jogos/">Jogos</a>
+        </li>
+        <li>
+          <a href="https://victorrschmidt.github.io/dbo2022/trab_css_final/pokesoft/Pel%C3%BAcias/">Pelúcias</a>
+        </li>
+        <li>
+          <a href="https://victorrschmidt.github.io/dbo2022/trab_css_final/pokesoft/Miscel%C3%A2nea/">Miscelânea</a>
+        </li>
+      </ul>
+      <ul>
+        <li>
+          <a class="menu_ativo" href="https://victorrschmidt.github.io/dbo2022/trab_css_final/pokesoft/Calcular_frete/">Calcular fretes</a>
+        </li>
+        <li>
+          <a href="https://victorrschmidt.github.io/dbo2022/trab_css_final/pokesoft/Contato/">Fale conosco</a>
+        </li>
+      </ul>
+    </nav> 
+    <main>
+      <img src="../../img/design/calcular_fretes.png" id="tema" alt="calcular_fretes"> 
+      <h1>Quase lá...</h1>
+      <h2>Preencha o formulário abaixo para enviarmos seu pedido!</h2>
+      <form>
+        <fieldset>
+          <legend>Identificação</legend>
+          <div class="grupo_form">
+            <label for="nome">Nome completo</label> <br>
+            <input type="text" id="nome" autofocus required> <br> 
+            <small>Suas informações pessoais são mantidas em segurança.</small>
+          </div>
+          <div class="grupo_form">
+            <label for="email">Email</label> <br>
+            <input type="email" id="email" required>
+          </div>
+          <div class="grupo_form">
+            <label for="telefone">Telefone</label> <br>
+            <input type="tel" id="telefone" required> <br>
+            <small>Inclua seu DDD.</small>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Endereço</legend>
+          <div class="grupo_form">
+            <label for="estado">Estado</label> <br>
+            <input type="text" id="estado" required>
+          </div>
+          <div class="grupo_form">
+            <label for="cidade">Cidade</label> <br>
+            <input type="text" id="cidade" required>
+          </div>
+          <div class="grupo_form">
+            <label for="bairro">Bairro</label> <br>
+            <input type="text" id="bairro" required>
+          </div>
+          <div class="grupo_form">
+            <label for="rua">Rua</label> <br>
+            <input type="text" id="rua" required>
+          </div>
+          <div class="grupo_form">
+            <label for="numero">N°</label> <br>
+            <input type="number" id="numero" required>
+          </div>
+          <div class="grupo_form">
+            <label for="complemento">Complemento</label> <br>
+            <input type="text" id="complemento"> <br>
+            <small>Ex: Condomínio, bloco, apartamento, estúdio...</small>
+          </div>
+        </fieldset>
+        <fieldset>
+          <legend>Forma de pagamento</legend>
+          <div class="marcar">
+            <input class="radio" type="radio" name="pagamento" id="boleto" value="option2"> 
+            <label for="boleto">Boleto</label> 
+            <input class="radio" type="radio" name="pagamento" id="pix" value="option3"> 
+            <label for="pix">Pix</label> 
+            <input class="radio" type="radio" name="pagamento" id="cartão" value="option1" checked> 
+            <label for="cartão">Cartão</label>
+          </div> 
+          <div class="grupo_form">
+            <label for="card_num">Número do cartão</label> 
+            <input type="number" id="card_num" placeholder="N° do cartão">
+          </div>
+        </fieldset>
+        <button type="submit">Finalizar compra</button>
+      </form>
+      <img src="../../img/design/frete_image.png" id="frete_image" alt="frete_image"> 
+      <p id="ltda">Poké Soft Serviços de Varejo Ltda. © 2022. Formas de pagamento aceitas: cartões de crédito e débito, boleto ou pix.</p>
+    </main> 
+  </div> 
+  <footer> 
+    <nav id="info">
+      <ul id="footer_lista">
+        <li>
+          <a href="https://victorrschmidt.github.io/dbo2022/trab_css_final/pokesoft/Anima%C3%A7%C3%A3o/">Novo: Animação</a> 
+        </li>
+        <li>
+          <a href="https://victorrschmidt.github.io/dbo2022/trab_css_final/pokesoft/Sobre/">Sobre o site</a>
+        </li>
+        <li>
+          <a href="https://victorrschmidt.github.io/dbo2022/trab_css_final/pokesoft/Contato/">Contato</a>
+        </li>
+        <li>
+          <a href="https://victorrschmidt.github.io/dbo2022/trab_css_final/pokesoft/Recomenda%C3%A7%C3%B5es/">Recomendações</a>
+        </li>
+        <li>Nossas redes sociais:</li>
+        <li>
+          <a href="https://twitter.com/">Twitter</a>
+        </li>
+        <li>
+          <a href="https://www.youtube.com/">Youtube</a>
+        </li>
+        <li>
+          <a href="https://www.instagram.com/">Instagram</a>
+        </li>
+        <li>
+          <img src="../../img/design/logo.png" id="footer_logo" alt="logo">
+        </li>
+      </ul>
+    </nav>
+  </footer>
+  <div id="blank_space"></div>
+  <div id="loading"></div>
+</body>
+</html>
