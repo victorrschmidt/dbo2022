@@ -1,0 +1,508 @@
+/* --------------------- Fontes --------------------- */
+
+@import url('https://fonts.googleapis.com/css2?family=Josefin+Sans:wght@100&family=Ubuntu:wght@300&display=swap');
+/*
+font-family: 'Josefin Sans', sans-serif;
+font-family: 'Ubuntu', sans-serif;
+*/
+
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@100&family=Ubuntu:wght@300&display=swap');
+/*
+font-family: 'Montserrat Alternates', sans-serif;
+font-family: 'Ubuntu', sans-serif;
+*/
+
+/* --------------------- Tags padrão utilizadas por todas as páginas --------------------- */
+
+*{padding: 0; margin: 0;}
+a{text-decoration: none;}
+li{list-style: none;}
+
+h1{
+    text-align: center;
+    font-size: 45px;
+    color: #212529;
+    margin-bottom: 10px;
+}
+
+h2{
+    text-align: center;
+    font-size: 15px;
+    color: #212529;
+}
+
+hr{
+    margin: 50px;
+}
+
+iframe{
+    display: block;
+    margin-top: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    width: 56vw;
+    height: 31.5vw;
+}
+
+body{
+    background: #006abf; 
+    font-family: 'Josefin Sans', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#container{
+    display: flex;
+    flex-wrap: wrap;
+    background: white;
+    padding-bottom: 15px;
+    border-radius: 0 0 10px 10px;
+    margin: auto;
+    margin-bottom: 15px;
+    width: 90vw;
+}
+
+#header_logo{
+    margin-top: 0.5%;
+    width: 100%;
+}
+
+#banner{
+    width: 100%;
+}
+
+#menus{
+    display: flex;
+    justify-content: space-between;
+    background: #ef1c25;
+    padding-right: 15px;
+    padding-left: 15px;
+    border: solid black 4px;
+    border-right: 0;
+    border-left: 0;
+    margin-bottom: 15px;
+    width: 100%;
+}
+
+#menus li, #info li{
+    float: left;
+    margin: 20px 8px 20px 8px;
+}
+
+#menus a{
+    color: #f78e92;
+}
+
+#menus a:hover{
+    color: #fbc6c8;
+}
+
+#menus a.menu_ativo{
+    color: white;
+}
+
+main{
+    font-family: 'Montserrat Alternates', sans-serif;
+    font-family: 'Ubuntu', sans-serif;
+}
+
+#tema{
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+#ltda{
+    text-align: center;
+    font-size: 12px;
+    padding: 10px;
+}
+
+#info{
+    display: flex;
+    background: white;
+    border-radius: 10px;
+    margin: auto;
+    width: 90vw;
+}
+
+#info a{
+    color: #7f7f7f;
+}
+
+#info a:hover{
+    color: #4c4c4c;
+}
+
+#footer_lista{
+    padding-left: 15px;
+}
+
+#footer_lista a.menu_ativo{
+    color: black;
+}
+
+#footer_logo, #blank_space{
+    height: 20px;
+}
+
+#atendentes{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 10px;
+    padding: 10px;
+    border: solid #212529 1px;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+#parceiro{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+p.info{
+    text-align: justify;
+    text-indent: 25px;
+    margin: 20px;
+}
+
+p.info a{
+    color: #ef1c25;
+}
+
+#spin{
+    position: relative;
+    left: 30px;
+    top: 20px;
+    width: 10vw;
+    height: 10vw;
+    margin-bottom: 50px;
+    background: #ef1c25;
+    animation: spin 20s infinite;
+    animation-fill-mode: forwards;
+    animation-direction: normal;
+}
+
+/* --------------------- produtos --------------------- */
+
+#lista_produtos{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.produto{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 15px;
+    border: solid red 4px;
+    border-radius: 5px;
+    margin-bottom: 20px;
+    width: 350px;
+}
+
+.produto a, .produto a:hover{
+    color: black;
+}
+
+.produto:hover{
+    background: #e2e6ea;
+}
+
+/* --------------------- formulários --------------------- */
+
+form{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 40px;
+    border: solid #212529 1px;
+    border-radius: 5px;
+    margin: 20px;
+}
+
+fieldset{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: 100%;
+    border: 0;
+    margin-bottom: 25px;
+}
+
+.grupo_form{
+    margin: 5px;
+}
+
+legend{
+    margin-bottom: 10px;
+    font-size: 30px;
+}
+
+label{
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+
+input{
+    height: 30px;
+    border: solid #212529 1px;
+    border-radius: 5px;
+    margin-bottom: 5px;
+}
+
+textarea{
+    resize: vertical;
+    width: 300px;
+}
+
+.marcar{
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+button{
+    height: 45px;
+    background: #007bff;
+    color: white;
+    padding-right: 8px;
+    padding-left: 8px;
+    border: solid #007bff;
+    border-radius: 4px;
+}
+
+button:hover{
+    cursor: pointer;
+    background: #0069d9;
+    border: solid #0062cc;
+}
+
+#frete_image{
+    display: block;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+/* --------------------- tabelas e listas --------------------- */
+
+#tabelas{
+    display: flex;
+    flex-direction: column;
+}
+
+caption{
+    margin-bottom: 5px;
+}
+
+table{
+    text-align: center;
+    border: solid #212529 1px;
+    border-collapse: collapse;
+    margin: 20px;
+}
+
+thead{
+    background: #e9ecef;
+    color: #495057;
+}
+
+th, td{
+    border: solid #212529 1px;
+}
+
+tr.cinza{
+    background: #f2f2f2;
+}
+
+#listagem{
+    text-align: left;
+    border: solid #212529 1px;
+    margin: 20px;
+}
+
+li.grupo_lista_inicial{
+    background: #007bff;
+    color: white;
+    padding: 10px 0 10px 20px;
+    margin-bottom: 5px;
+}
+
+li.grupo_lista{
+    padding: 10px 0 10px 20px;
+    border-bottom: solid #212529 1px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}
+
+ul.sublista li{
+    list-style: disc;
+    margin: 8px 0 8px 40px;
+}
+
+li.grupo_lista_final{
+    padding: 10px 0 10px 20px;
+    margin-top: 5px;
+}
+
+/* --------------------- medias --------------------- */
+
+@media (min-width: 576px){ /* Telas médias */
+
+    #container, #info{
+        width: 85vw;
+    }
+
+    #header_logo{
+        float: left;
+        width: 25%;
+    }
+    
+    #banner{
+        float: left;
+        width: 75%;
+    }
+
+    #lista_produtos{
+        flex-direction: row;
+        flex-wrap: wrap;
+        justify-content: space-evenly;
+    }
+}
+
+@media (min-width: 678px){ /* Definir largura das caixas dos produtos para telas maiores (produtos em fila) */
+  
+    .produto{
+        width: 250px;
+        margin-right: 15px;
+        margin-left: 15px;
+    }
+
+    #parceiro{
+        flex-direction: row;
+        margin-left: 20px;
+    }
+
+    #tabelas{
+        flex-direction: row;
+        justify-content: space-around;
+    }
+
+    table{
+        width: 30vw;
+        height: 50vw;
+    }
+
+    #listagem{
+        width: 30vw;
+    }
+}
+
+@media (min-width: 732px){
+    
+    fieldset{
+        flex-direction: row;
+        flex-wrap: wrap;
+    }
+    
+    .marcar{
+        justify-content: left;
+        margin-right: 20px;
+    }
+
+    .radio{
+        margin-right: 10px;
+        margin-left: 10px;
+    }
+}
+
+@media (min-width: 1400px){ /* Telas grandes ou zoom */
+
+    #container, #info{
+        width: 1000px;
+    }
+
+    iframe{
+        width: 560px;
+        height: 315px;
+    }
+
+    #tabelas{
+        width: 900px;
+    }
+
+    table{
+        height: 800px;
+    }
+
+    #spin{
+        width: 100px;
+        height: 100px;
+    }
+}
+
+@media (max-width: 732px){ /* Definir o empilhamento do menu para telas menores */
+
+    #menus, #info{
+        flex-direction: column;
+    }
+
+    #menus li, #info li{
+        float: none;
+    }
+
+    #footer_logo{
+        width: 185px;
+        height: 50px;
+    }
+}
+
+/* --------------------- animação --------------------- */
+
+#loading{
+    position: fixed;
+    bottom: 1vw;
+    left: 1vw;
+    width: 10vw;
+    height: 10vw;
+    background-image: url(../img/design/loading.png);
+    background-size: cover;
+    animation: loading 2s linear;
+    animation-fill-mode: forwards;
+}
+
+@keyframes loading{
+    
+    0%{
+        opacity: 0;
+        transform: rotateY(720deg);   
+    }
+    10%{
+        opacity: 1;
+    }
+    70%{
+        opacity: 1;
+    }
+    100%{
+        opacity: 0;
+    }
+}
+
+@keyframes spin{
+    
+    20%{
+        transform: rotate(3600deg);
+    }
+    50%{
+        background: #006abf; 
+    }
+    70%{
+        border-radius: 50%;
+    }
+    80%{
+        transform: rotate(360deg);
+    }
+}
