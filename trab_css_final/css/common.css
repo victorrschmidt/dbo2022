@@ -73,6 +73,8 @@ body{
 #menus{
     display: flex;
     justify-content: space-between;
+    align-items: center;
+    flex-direction: row;
     background: #ef1c25;
     padding-right: 15px;
     padding-left: 15px;
@@ -185,6 +187,57 @@ p.info a{
     animation-direction: normal;
 }
 
+#sanduiche{
+    display: flex;
+    flex-direction: column;
+    width: 36px;
+    height: 28px;
+    margin: 15px 0;
+    position: relative;
+    cursor: pointer;
+}
+
+#sanduiche span{
+    background: white;
+    position: absolute;
+    left: 0;
+    width: 100%;
+    height: 4px;
+    border-radius: 4px;
+}
+
+#sanduiche span:nth-of-type(1){
+    top: 0;
+}
+
+#sanduiche span:nth-of-type(2){
+    top: 12px;
+}
+
+#sanduiche span:nth-of-type(3){
+    bottom: 0;
+}
+
+.sanduiche_ativo span{
+    transition: all .4s;
+}
+
+.sanduiche_ativo span:nth-of-type(1) {
+    transform: translateY(12px) rotate(-45deg);
+}
+
+.sanduiche_ativo span:nth-of-type(2) {
+    display: none;
+}
+
+.sanduiche_ativo span:nth-of-type(3) {
+    transform: translateY(-12px) rotate(45deg);
+}
+
+#sanduiche.inativo{
+    display: none;
+}
+
 /* --------------------- produtos --------------------- */
 
 #lista_produtos{
@@ -249,6 +302,7 @@ label{
 
 input{
     height: 30px;
+    padding: 6px;
     border: solid #212529 1px;
     border-radius: 5px;
     margin-bottom: 5px;
@@ -279,6 +333,35 @@ button:hover{
     cursor: pointer;
     background: #0069d9;
     border: solid #0062cc;
+}
+
+#grupo_form_2{
+    border-radius: 5px;
+}
+
+#display_erros{
+    display: flex;
+    flex-direction: column;
+    margin: 20px auto;
+    font-size: 1.5em;
+}
+
+#confirmar_dados{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    width: 80%;
+    padding: 8px;
+    margin: 0 auto 25px;
+    border: solid #212529 2px;
+    border-radius: 5px;
+    line-height: 2.2em;
+}
+
+#confirmar_dados p{
+    font-size: 1.2em;
+    text-indent: 20px;
 }
 
 #frete_image{
@@ -444,11 +527,42 @@ li.grupo_lista_final{
     }
 }
 
-@media (max-width: 732px){ /* Definir o empilhamento do menu para telas menores */
+@media (min-width: 776px){
+
+    #sanduiche{
+        display: none;
+    }
+
+}
+
+@media (max-width: 776px){ /* Sanduiche */
+    
+    #sanduiche.inativo{
+        display: initial;
+    }
+
+    #menus.menus_ativo{
+        display: flex;	
+        flex-direction: column;
+        height: 500px;
+    }
 
     #menus, #info{
         flex-direction: column;
     }
+
+    #menus ul{
+        display: none;
+    }
+
+    #menus.menus_ativo ul{
+        display: flex;
+        flex-direction: column;
+    }
+
+}
+
+@media (max-width: 732px){ /* Definir o empilhamento do menu para telas menores */
 
     #menus li, #info li{
         float: none;
@@ -457,6 +571,14 @@ li.grupo_lista_final{
     #footer_logo{
         width: 185px;
         height: 50px;
+    }
+}
+
+@media (max-width: 950px){
+
+    #confirmar_dados{
+        flex-direction: column;
+        justify-content: center;
     }
 }
 
