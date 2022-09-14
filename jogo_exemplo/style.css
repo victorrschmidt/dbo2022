@@ -1,0 +1,75 @@
+* {
+    padding: 0;
+    margin: 0;
+    border: 0;
+}
+.fundo {
+    display: block;
+    width: 400px;
+    height: 400px;
+    background-color: lightblue;
+    text-align: center;
+    margin: 20px auto;
+    outline: solid purple 8px;
+}
+#div2 {
+    position: relative; 
+    top: 10px; 
+    left: 15px; 
+    width: 100px; 
+    height: 100px; 
+    background-color: green; 
+}
+#div1 {
+    position: relative;
+    top: 100px;
+    left: 180px; 
+    width: 50px; 
+    height: 50px; 
+    background-color: green; 
+}
+.painel {
+    display: flex;
+    gap: 15px;
+    flex-direction: column;
+    margin: 0 auto;
+    width: 400px;
+    text-align: center;
+
+}
+button {
+    font-size: 1em;
+    padding: 1rem;
+    outline: solid black 2px;
+}
+#botoes-parar {
+    display: flex;
+    justify-content: space-evenly;
+}
+#botoes-dir {
+    height: 200px;
+}
+#acima {
+    position: relative;
+    left: 120px;
+}
+#esquerda {
+    position: relative;
+    top: 55px;
+    left: -22px;
+}
+#direita {
+    position: relative;
+    top: 55px;
+    left: -20px;
+}
+#baixo {
+    position: relative;
+    top: 110px;
+    left: -150px;
+}
+#bosque-graph {
+    background: green;
+    height: 50px;
+    width: 50px;
+}
