@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8"/>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>Jogo</title>
+    <!-- <link rel="icon" type="image/x-icon" href="img/favicon.ico?"> -->
+    <link rel="stylesheet" href="style.css"/>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200"/>
+</head>
+<body>
+    <main>
+        <div id="game-display">
+            <div id="destiny-div"></div>
+            <div id="first-enemy-div"></div>
+            <div id="player-div"></div>
+        </div>
+        <div id="game-controls">
+            <div id="control-up" onclick="playerMovement(this.id)">
+                <span class="material-symbols-outlined">arrow_upward</span>
+            </div>
+            <div id="control-right" onclick="playerMovement(this.id)">
+                <span class="material-symbols-outlined">arrow_right_alt</span>
+            </div>
+            <div id="control-down" onclick="playerMovement(this.id)">
+                <span class="material-symbols-outlined">arrow_downward</span>
+            </div>
+            <div id="control-left" onclick="playerMovement(this.id)">
+                <span class="material-symbols-outlined">arrow_back</span>
+            </div>
+        </div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
