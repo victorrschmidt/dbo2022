@@ -15,9 +15,12 @@ img {
     max-width: 100.0%;
     max-height: 100.0%;
 }
+h1, h2 {
+    font-weight: normal;
+}
 
 body {
-    background-color: #AED6F1;
+    background-color: #58316B;
 }
 main {
     display: flex;
@@ -37,6 +40,7 @@ main {
     user-select: none;
 }
 #game-display {
+    z-index: 1;
     background-image: url("img_audio/display_background.png");
     background-size: contain;
     outline: solid #989898 4px;
@@ -51,24 +55,27 @@ main {
     background-position: center;
 }
 #destiny-div {
+    z-index: 2;
     background-image: url("img_audio/key_image.png");
-    top: 2.0%;
+    top: 6.0%;
     left: 45.5%;
     width: 9.0%;
     height: 8.0%;
 }
 #first-enemy-div {
+    z-index: 99; /* Manter as divs dos inimigos sempre sobrepondo a div do jogador */
     top: 45.5%;
     width: 7.0%;
     height: 9.0%;
     background: blue;
 }
 #player-div {
-    top: 88.0%;
+    z-index: 4;
+    top: 86.0%;
     left: 47.0%;
     width: 6.0%;
     height: 8.0%;
-    background: pink;
+    background: red;
 }
 #game-controls {
     position: relative;
@@ -105,3 +112,73 @@ main {
 #control-left {
     top: 35%;
 }
+footer {
+    background-color: #8C16C7;
+    box-shadow: 7px 7px 12px 2px rgba(0, 0, 0, 0.2);
+    display: inline-block;
+    width: 100.0%;
+    padding: 1.2rem 0;
+    margin-bottom: 2.0rem;
+    font-family: 'Noto Sans JP', sans-serif;
+}
+#footer-sections {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 1.2rem;
+    width: 100.0%;
+    max-width: 1367px;
+    margin: 0 auto;
+}
+#game-title {
+    color: #FFBF00;
+    opacity: 0.9;
+    text-align: center;
+    font-size: 3.0em;
+    margin-bottom: 1.2rem;
+}
+#footer-sections > section {
+    opacity: 0.9;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.4em;
+    width: 30.0%;
+    max-width: 400px;
+    padding: 1.0rem;
+    border: dashed #FFBF00 4px;
+    font-size: 1.1em
+}
+#footer-sections > section h2 {
+    color: #FFBF00;
+    text-align: center;
+    font-style: italic;
+    font-size: 2.2em;
+}
+#footer-sections > section p {
+    color: #FFFFFF;
+    word-spacing: 0.1em;
+    line-height: 1.5em;
+}
+a.footer-link {
+    color: #FFFFFF;
+    opacity: 0.6;
+    text-decoration: underline;
+    transition: 0.25s ease-out;
+}
+a.footer-link:hover {
+    opacity: 1;
+}
+
+@media only screen and (max-width: 680px) {
+    #footer-sections {
+        flex-direction: column;
+        align-items: center;
+    }
+    #footer-sections > section {
+        width: 80.0%;
+        max-width: unset;
+    }
+} 

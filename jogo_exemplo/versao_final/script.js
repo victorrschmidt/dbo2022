@@ -1,63 +1,27 @@
 const game_display = document.getElementById("game-display"),
-enemy_div = document.getElementById("first-enemy-div"),
 player_div = document.getElementById("player-div"),
 player_key_up = document.getElementById("control-up"),
 player_key_right = document.getElementById("control-right"),
 player_key_down = document.getElementById("control-down"),
-player_key_left = document.getElementById("control-left");
+player_key_left = document.getElementById("control-left"),
+destiny_key = document.getElementById("destiny-div"),
+enemy_div = document.getElementById("first-enemy-div"),
+keyboard_keys = { 38: "up", 39: "right", 40: "down", 37: "left" };
 
-let enemy_movement_direction = "right";
-
-    function enemyMovement()
-    {   
-        let game_display_width = parseInt(getComputedStyle(game_display).width);
-        let enemy_div_width = parseInt(getComputedStyle(enemy_div).width);
-        let enemy_left_pos = parseInt(getComputedStyle(enemy_div).left);
-
-        let enemy_speed = Math.ceil(game_display_width/300);  
-
-        if(enemy_movement_direction == "right")
-        {
-            enemy_div.style.left = `${enemy_left_pos + enemy_speed}px`;
-
-            if(parseFloat(enemy_div.style.left) > game_display_width - enemy_div_width)
-            {
-                enemy_div.style.left = `${game_display_width - enemy_div_width}px`;
-            }
-
-            if(enemy_left_pos >= game_display_width - enemy_div_width)
-            {
-                enemy_movement_direction = "left";
-            }
-        }
-
-        if(enemy_movement_direction == "left")
-        {
-            enemy_div.style.left = `${enemy_left_pos - enemy_speed}px`;
-
-            if(enemy_left_pos <= 0)
-            {
-                enemy_div.style.left = 0;
-                enemy_movement_direction = "right";
-            }
-        }
-    }
-
-let enemy_time = setInterval("enemyMovement()", 6);
-
-const keyboard_keys = { 38: "up", 39: "right", 40: "down", 37: "left" };
-document.onkeydown = keyboardKey;
-
-    function keyboardKey(e) {
-        
+    // Verificar se as setas do teclado foram pressionadas (apenas para pc)
+    document.onkeydown = keyboardKey;
+    function keyboardKey(e) 
+    {
         if(e.keyCode >= 37 && e.keyCode <= 40)
         {    
             playerMovement("control-" + keyboard_keys[e.keyCode]);
+            e.preventDefault();  // Impedir que a página suba ou desça no navegador
         }
     }
 
-let VERIFY_KEY_TOUCH;
+let VERIFY_KEY_TOUCH;  // Variável que verifica que se o jogador encostou na chave
 
+    // Movimento do jogador
     function playerMovement(key)
     {
         let game_display_width = parseInt(getComputedStyle(game_display).width);
@@ -108,8 +72,7 @@ let VERIFY_KEY_TOUCH;
         VERIFY_KEY_TOUCH = setTimeout("touchKey()", 500);
     }
 
-let destiny_key = document.getElementById("destiny-div");
-
+    // Verificar se o jogador encostou na chave
     function touchKey()
     {
         let key_width = parseInt(getComputedStyle(destiny_key).width);
@@ -119,7 +82,7 @@ let destiny_key = document.getElementById("destiny-div");
         let player_top_pos = parseInt(getComputedStyle(player_div).top);
         let player_left_pos = parseInt(getComputedStyle(player_div).left);
 
-        if(key_top_pos+(key_height-4) - player_top_pos >= -4 && key_left_pos+(key_width-4) - player_left_pos >= -4)
+        if(Math.abs(key_top_pos-player_top_pos) < key_height && parseInt(Math.abs(key_left_pos-player_left_pos)*1.6) < key_width)
         {
             alert('voce ganhou!');
         }
@@ -127,6 +90,46 @@ let destiny_key = document.getElementById("destiny-div");
         clearTimeout(VERIFY_KEY_TOUCH);
     }
 
+let enemy_movement_direction = "right";
+
+    function enemyMovement()
+    {   
+        let game_display_width = parseInt(getComputedStyle(game_display).width);
+        let enemy_div_width = parseInt(getComputedStyle(enemy_div).width);
+        let enemy_left_pos = parseInt(getComputedStyle(enemy_div).left);
+
+        let enemy_speed = Math.ceil(game_display_width/600);  
+
+        if(enemy_movement_direction == "right")
+        {
+            enemy_div.style.left = `${enemy_left_pos + enemy_speed}px`;
+
+            if(parseFloat(enemy_div.style.left) > game_display_width - enemy_div_width)
+            {
+                enemy_div.style.left = `${game_display_width - enemy_div_width}px`;
+            }
+
+            if(enemy_left_pos >= game_display_width - enemy_div_width)
+            {
+                enemy_movement_direction = "left";
+            }
+        }
+
+        if(enemy_movement_direction == "left")
+        {
+            enemy_div.style.left = `${enemy_left_pos - enemy_speed}px`;
+
+            if(enemy_left_pos <= 0)
+            {
+                enemy_div.style.left = 0;
+                enemy_movement_direction = "right";
+            }
+        }
+    }
+
+let enemy_time = setInterval("enemyMovement()", 6);
+
+//key_top_pos+(key_height-4) - player_top_pos >= -4 && key_left_pos+(key_width-4) - player_left_pos >= -4
 //const EVENT_VERIFIER = setInterval( () => { }, 500);
 
 
