@@ -8,6 +8,9 @@ destiny_key = document.getElementById("destiny-div"),
 enemy_div = document.getElementById("first-enemy-div"),
 keyboard_keys = { 38: "up", 39: "right", 40: "down", 37: "left" };
 
+let VERIFY_KEY_TOUCH;  // Variável que verifica que se o jogador encostou na chave
+let LEVEL = 1;
+
     // Verificar se as setas do teclado foram pressionadas (apenas para pc)
     document.onkeydown = keyboardKey;
     function keyboardKey(e) 
@@ -18,8 +21,6 @@ keyboard_keys = { 38: "up", 39: "right", 40: "down", 37: "left" };
             e.preventDefault();  // Impedir que a página suba ou desça no navegador
         }
     }
-
-let VERIFY_KEY_TOUCH;  // Variável que verifica que se o jogador encostou na chave
 
     // Movimento do jogador
     function playerMovement(key)
@@ -84,11 +85,22 @@ let VERIFY_KEY_TOUCH;  // Variável que verifica que se o jogador encostou na ch
 
         if(Math.abs(key_top_pos-player_top_pos) < key_height && parseInt(Math.abs(key_left_pos-player_left_pos)*1.6) < key_width)
         {
-            alert('voce ganhou!');
+            LEVEL++;
         }
 
         clearTimeout(VERIFY_KEY_TOUCH);
     }
+
+
+
+
+
+
+
+
+
+
+
 
 let enemy_movement_direction = "right";
 
@@ -129,45 +141,5 @@ let enemy_movement_direction = "right";
 
 let enemy_time = setInterval("enemyMovement()", 6);
 
-//key_top_pos+(key_height-4) - player_top_pos >= -4 && key_left_pos+(key_width-4) - player_left_pos >= -4
+
 //const EVENT_VERIFIER = setInterval( () => { }, 500);
-
-
-
-/*
-}
-
-    function colisao(){
-    let div1Left= parseInt(getComputedStyle(div1).left);
-    let div1Top= parseInt(getComputedStyle(div1).top);
-    let div1Height= parseInt(getComputedStyle(div1).height);
-    let div1Width= parseInt(getComputedStyle(div1).width);
-
-    let div2Left= parseInt(getComputedStyle(div2).left);
-    let div2Top= parseInt(getComputedStyle(div2).top);
-    let div2Height= parseInt(getComputedStyle(div2).height);
-    let div2Width= parseInt(getComputedStyle(div2).width);
-    
-    let fundoHeight= parseInt(getComputedStyle(fundo).height);
-    let fundoWidth= parseInt(getComputedStyle(fundo).width);
-
-
-
-        if (((div1Left >= div2Left)&&(div1Left <= div2Left + div2Width))&&
-            ((div1Top >= div2Top)&&(div1Top <= div2Top + div2Height))){
-                para2();
-                para();
-        }
-        if (((div2Left >= div1Left)&&(div2Left <= div1Left + div1Width))&&
-            ((div2Top >= div1Top)&&(div2Top <= div1Top + div1Height))){
-                para2();
-                para();
-        }
-    }
-
-
-//Ao carregar a página estas linhas são executadas. 
-let contador = 0;
-let cont = 0;
-   let m = setInterval("moverdireita()", 15); //Funções que são chamadas a cada 15 e 5 milisegundos
-let n = setInterval("colisao()", 5); */
