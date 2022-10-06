@@ -1,23 +1,22 @@
 const game_display = document.getElementById("game-display"),
 player = document.getElementById("player-div"),
-player_key_up = document.getElementById("control-up"),
-player_key_right = document.getElementById("control-right"),
-player_key_down = document.getElementById("control-down"),
-player_key_left = document.getElementById("control-left"),
 key = document.getElementById("key-div"),
 keyboard_keys = { 38: "up", 39: "right", 40: "down", 37: "left" },
 end_screen = document.getElementById("end-screen"),
 win_screen = document.getElementById("win-screen"),
 lost_screen = document.getElementById("lost-screen"),
-try_time = document.getElementById("time");
+try_time = document.getElementById("time"),
+background_music = document.getElementById("background-music"),
+audio_control = document.getElementById("audio-control");
 
+let force_music_pause = false;
 let LEVEL = 1;
 let ENEMIES = [document.getElementById("first-enemy-div")];
 let ENEMIES_MOVE_DIRECTION = ["right"];
 let ENEMIES_POSITIONS = [];
 let PLAYER_FREEZE = false;
 let time = 0;
-let TIMER = setInterval( () => { time += 0.1 }, 100);
+let TIMER = setInterval( () => { time += 0.1; }, 100);
 
     // Remover as divs dos inimigos da fase passada e criar "number" inimigos para a próxima fase
     function removeCreateEnemies(number)
@@ -45,45 +44,83 @@ let TIMER = setInterval( () => { time += 0.1 }, 100);
     // Organizar elementos das fases (posição do jogador, chave e dos inimigos)
     function createLevel()
     {
-        if(LEVEL == 1)
+        switch(LEVEL)
         {
-            player.style.top = "86%";
-            player.style.left = "47%";
+            case 1:
+                player.style.top = "86%";
+                player.style.left = "47%";
 
-            key.style.display = "unset";  // Ajustar a posição da chave
-            key.style.top = "6%";
-            key.style.left = "45.5%";
+                key.style.display = "unset";  // Ajustar a posição da chave
+                key.style.top = "6%";
+                key.style.left = "45.5%";
 
-            ENEMIES_MOVE_DIRECTION = ["right"];
-            ENEMIES_POSITIONS = ["45.5", "0"];
-            removeCreateEnemies(1);
-        }
+                ENEMIES_MOVE_DIRECTION = ["right"];
+                ENEMIES_POSITIONS = ["45.5 0"];
+                removeCreateEnemies(1);
+                break;
 
-        if(LEVEL == 2)
-        {
-            key.style.display = "unset";  
-            key.style.top = "88%";
-            key.style.left = "90%";
+            case 2:
+                key.style.display = "unset";  
+                key.style.top = "86%";
+                key.style.left = "45.5%";
+                
+                ENEMIES_MOVE_DIRECTION = ["right", "left"];
+                ENEMIES_POSITIONS = ["30 0", "60 92"];
+                removeCreateEnemies(2);
+                break;
+
+            case 3:
+                key.style.display = "unset";  
+                key.style.top = "46%";
+                key.style.left = "90%";
             
-            ENEMIES_MOVE_DIRECTION = ["right", "left", "right", "up"];
-            ENEMIES_POSITIONS = ["70 70", "60 60", "50 50", "30 80",];
-            removeCreateEnemies(4);
-        }
+                ENEMIES_MOVE_DIRECTION = ["right", "up", "down"];
+                ENEMIES_POSITIONS = ["60 0", "91 60", "0 78"];
+                removeCreateEnemies(3);
+                break;
 
-        if(LEVEL == 3)
-        {
-            key.style.display = "unset";  
-            key.style.top = "46%";
-            key.style.left = "2%";
+            case 4:
+                key.style.display = "unset";  
+                key.style.top = "46%";
+                key.style.left = "2%";
+    
+                ENEMIES_MOVE_DIRECTION = ["down", "up", "down", "up", "down"];
+                ENEMIES_POSITIONS = ["2 12", "92 28", "2 44", "92 60", "2 76"];
+                removeCreateEnemies(5);
+                break;
 
-            ENEMIES_MOVE_DIRECTION = ["down", "up", "down", "up", "down"];
-            ENEMIES_POSITIONS = ["2 12", "92 28", "2 44", "92 60", "2 76"];
-            removeCreateEnemies(5);
-        }
+            case 5:
+                key.style.display = "unset";  
+                key.style.top = "46%";
+                key.style.left = "45.5%";
 
-        if(LEVEL == 7)
-        {
-            winLostScreen("win");
+                ENEMIES_MOVE_DIRECTION = ["right", "right", "left", "left", "up"];
+                ENEMIES_POSITIONS = ["30 0", "60 0", "30 92", "60 92", "92 30"];
+                removeCreateEnemies(5);
+                break;
+
+            case 6:
+                key.style.display = "unset";
+                key.style.top = "86%";
+                key.style.left = "45.5%";
+
+                ENEMIES_MOVE_DIRECTION = ["down", "up", "right", "left", "right", "left"];
+                ENEMIES_POSITIONS = ["0 35", "92 60", "28 0", "28 92", "62 0", "62 92"];
+                removeCreateEnemies(6);
+                break;
+
+            case 7:
+                key.style.display = "unset"; 
+                key.style.top = "6%";
+                key.style.left = "45.5%";
+
+                ENEMIES_MOVE_DIRECTION = ["right", "right", "right", "right", "left", "left", "left", "left", "up", "down", "up", "down"];
+                ENEMIES_POSITIONS = ["5 0", "26 0", "47 0", "68 0", "5 92", "26 92", "47 92", "68 92", "92 8", "0 25", "92 65", "0 82"];
+                removeCreateEnemies(12);
+                break;
+
+            default:
+                winLostScreen("win");
         }
     }
 
@@ -101,6 +138,11 @@ let TIMER = setInterval( () => { time += 0.1 }, 100);
     // Movimento do jogador
     function playerMovement(key)
     {
+        if(force_music_pause == false)
+        {
+            background_music.play();
+        }
+
         let game_display_width = parseInt(getComputedStyle(game_display).width);
         let game_display_height = parseInt(getComputedStyle(game_display).height);
         let player_width = parseInt(getComputedStyle(player).width);
@@ -190,7 +232,7 @@ let TIMER = setInterval( () => { time += 0.1 }, 100);
             let player_top_pos = parseInt(getComputedStyle(player).top);
             let player_left_pos = parseInt(getComputedStyle(player).left);
 
-            let enemy_speed = Math.ceil(game_display_width/300);
+            let enemy_speed = Math.ceil(game_display_width/400);
 
             if(ENEMIES_MOVE_DIRECTION[i] == "right")
             {
@@ -251,8 +293,9 @@ let TIMER = setInterval( () => { time += 0.1 }, 100);
         }
     }
 
-let enemy_movement_interval = setInterval("enemyMovementsCollisions()", 6);
-
+let enemy_movement_interval = setInterval(enemyMovementsCollisions, 6);
+    
+    // Mostrar tela de vitória ou derrota
     function winLostScreen(result)
     {
         clearInterval(TIMER);
@@ -270,11 +313,12 @@ let enemy_movement_interval = setInterval("enemyMovementsCollisions()", 6);
             try_time.innerHTML = `${String(parseInt(time/3600)).padStart("2","0")}:${String(parseInt(time%3600/60)).padStart("2","0")}:${String(parseInt(time%3600%60/1)).padStart("2","0")}.${String(parseInt(time%3600%60))}`;
         }
     }
-
+    
+    // Reiniciar o jogo
     function restartGame()
     {
         time = 0;
-        TIMER = setInterval( () => { time += 0.1 }, 100);
+        TIMER = setInterval( () => { time += 0.1; }, 100);
 
         end_screen.style.display = "none";
         win_screen.style.display = "none";
@@ -283,6 +327,21 @@ let enemy_movement_interval = setInterval("enemyMovementsCollisions()", 6);
         LEVEL = 1;
         createLevel();
 
-        enemy_movement_interval = setInterval("enemyMovementsCollisions()", 6);
+        enemy_movement_interval = setInterval(enemyMovementsCollisions, 6);
         PLAYER_FREEZE = false;
     }
+    
+    // Controle da música
+    audio_control.addEventListener("click", () => {
+        if(force_music_pause == false)
+        {
+            force_music_pause = true;
+            background_music.pause();
+            audio_control.setAttribute("class", "audio-off");
+        }
+        else {
+            force_music_pause = false;
+            background_music.play();
+            audio_control.setAttribute("class", "audio-on");
+        }
+    });

@@ -21,6 +21,7 @@ h1, h2 {
 
 body {
     background-color: #58316B;
+    font-family: 'Noto Sans JP', sans-serif;
 }
 main {
     display: flex;
@@ -118,6 +119,7 @@ button.restart-button {
     color: #FFBF00;
     width: 80.0%;
     border-radius: 12px;
+    font-style: italic;
     font-size: 2.0em;
     cursor: pointer;
     transition: 0.25s ease-out;
@@ -127,9 +129,8 @@ button.restart-button:hover {
 }
 #game-controls {
     position: relative;
-    width: 70.0%;
+    width: 100.0%;
     height: 40.0%;
-    max-width: 280px;
     -webkit-user-select: none;  /* Desativar hover dos textos */
     -khtml-user-select: none;
     -moz-user-select: none;
@@ -137,34 +138,56 @@ button.restart-button:hover {
     -o-user-select: none;
     user-select: none;
 }
-#game-controls > * {
+#game-controls > *:not(#audio-control) {
     background-color: #989898;
     box-shadow: 7px 7px 12px 2px rgba(0, 0, 0, 0.2);
     position: absolute;
     display: flex;
     justify-content: center;
     align-items: center;
-    width: 30.0%;
+    width: 20.0%;
     height: 30.0%;
     cursor: pointer;
     transition: 0.25s ease-out;
 }
-#game-controls > *:active {
+#game-controls > *:not(#audio-control):active {
     background-color: #707070;
 }
 #control-up {
-    left: 35%;
+    left: 40%;
 }
 #control-right {
     top: 35%;
-    left: 70%;
+    left: 63%;
 }
 #control-down {
     top: 70%;
-    left: 35%;
+    left: 40%;
 }
 #control-left {
     top: 35%;
+    left: 17%;
+}
+#audio-control {
+    background-size: contain;
+    background-position: center;
+    background-repeat: no-repeat;
+    position: absolute;
+    top: 84%;
+    left: 90%;
+    width: 10%;
+    height: 16%;
+    cursor: pointer;
+    transition: 0.25s ease-out;
+}
+#audio-control:active {
+    opacity: 0.7;
+}
+.audio-on {
+    background-image: url("img_audio/audio_on.png");
+}
+.audio-off {
+    background-image: url("img_audio/audio_off.png");
 }
 footer {
     background-color: #8C16C7;
@@ -173,7 +196,6 @@ footer {
     width: 100.0%;
     padding: 1.2rem 0;
     margin-bottom: 2.0rem;
-    font-family: 'Noto Sans JP', sans-serif;
 }
 #game-title {
     display: flex;
@@ -188,6 +210,10 @@ footer {
     opacity: 0.9;
     text-align: center;
     font-size: 3.0em;
+}
+#game-title > img {
+    width: 10.0vw;
+    max-width: 140px;
 }
 #footer-sections {
     display: flex;
@@ -234,6 +260,9 @@ a.footer-link:hover {
 }
 
 @media only screen and (max-width: 816px) {
+    #game-title {
+        width: 80.0%;
+    }
     #footer-sections {
         flex-direction: column;
         align-items: center;
