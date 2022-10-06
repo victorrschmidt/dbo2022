@@ -32,19 +32,13 @@ main {
     max-width: 500px;
     max-height: 580px;
     margin: 1.2rem auto;
-    -webkit-user-select: none;  /* Desativar hover dos textos */
-    -khtml-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    -o-user-select: none;
-    user-select: none;
 }
 #game-display {
     z-index: 1;
+    position: relative;
     background-image: url("img_audio/display_background.png");
     background-size: contain;
     outline: solid #989898 4px;
-    position: relative;
     width: 100.0%;
     height: 55.0%;
 }
@@ -54,7 +48,7 @@ main {
     background-repeat: no-repeat;
     background-position: center;
 }
-#destiny-div {
+#key-div {
     z-index: 2;
     background-image: url("img_audio/key_image.png");
     top: 6.0%;
@@ -63,25 +57,85 @@ main {
     height: 8.0%;
 }
 #first-enemy-div {
-    z-index: 99; /* Manter as divs dos inimigos sempre sobrepondo a div do jogador */
     top: 45.5%;
+}
+.enemy {  /* Todos os inimigos possuem essa classe */
+    z-index: 5;  /* Manter as divs dos inimigos sempre sobrepondo a div do jogador */
+    background-color: #1434A4;
     width: 7.0%;
     height: 9.0%;
-    background: blue;
 }
 #player-div {
     z-index: 4;
+    background-color: #800080;
     top: 86.0%;
     left: 47.0%;
     width: 6.0%;
     height: 8.0%;
-    background: red;
+}
+#end-screen {
+    z-index: 6;
+    background-color: #8C16C7;
+    color: #FFBF00;
+    outline: solid #FFBF00 4px;
+    display: none;
+    justify-content: center;
+    top: 10.0%;
+    left: 15.0%;
+    width: 70.0%;
+    height: 80.0%;
+    padding: 0.6rem;
+    border-radius: 16px;
+    transition: 0.25s ease-out;
+}
+#end-screen h2 {
+    text-align: center;
+    font-style: italic;
+    font-size: 2.6em;
+}
+#end-screen p {
+    text-align: left;
+    font-size: 1.2em;
+}
+#win-screen, #lost-screen {
+    display: none;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+#win-time {
+    display: flex;
+    align-items: baseline;
+}
+p#time {
+    margin-left: 0.3rem;
+    font-style: italic;
+    font-size: 2.0em;
+}
+button.restart-button {
+    opacity: 0.8;
+    background-color: #58316B;
+    color: #FFBF00;
+    width: 80.0%;
+    border-radius: 12px;
+    font-size: 2.0em;
+    cursor: pointer;
+    transition: 0.25s ease-out;
+}
+button.restart-button:hover {
+    opacity: 1;
 }
 #game-controls {
     position: relative;
     width: 70.0%;
     height: 40.0%;
     max-width: 280px;
+    -webkit-user-select: none;  /* Desativar hover dos textos */
+    -khtml-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    -o-user-select: none;
+    user-select: none;
 }
 #game-controls > * {
     background-color: #989898;
@@ -121,6 +175,20 @@ footer {
     margin-bottom: 2.0rem;
     font-family: 'Noto Sans JP', sans-serif;
 }
+#game-title {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 90.0%;
+    max-width: 572px;
+    margin: 1.2rem auto;
+}
+#game-title > h1 {
+    color: #FFBF00;
+    opacity: 0.9;
+    text-align: center;
+    font-size: 3.0em;
+}
 #footer-sections {
     display: flex;
     flex-direction: row;
@@ -130,13 +198,6 @@ footer {
     width: 100.0%;
     max-width: 1367px;
     margin: 0 auto;
-}
-#game-title {
-    color: #FFBF00;
-    opacity: 0.9;
-    text-align: center;
-    font-size: 3.0em;
-    margin-bottom: 1.2rem;
 }
 #footer-sections > section {
     opacity: 0.9;
@@ -172,7 +233,7 @@ a.footer-link:hover {
     opacity: 1;
 }
 
-@media only screen and (max-width: 680px) {
+@media only screen and (max-width: 816px) {
     #footer-sections {
         flex-direction: column;
         align-items: center;
@@ -181,4 +242,4 @@ a.footer-link:hover {
         width: 80.0%;
         max-width: unset;
     }
-} 
+}
