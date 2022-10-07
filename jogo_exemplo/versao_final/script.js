@@ -143,6 +143,7 @@ let TIMER = setInterval( () => { time += 0.1; }, 100);
             background_music.play();
         }
 
+        winLostScreen("win");
         let game_display_width = parseInt(getComputedStyle(game_display).width);
         let game_display_height = parseInt(getComputedStyle(game_display).height);
         let player_width = parseInt(getComputedStyle(player).width);
@@ -310,7 +311,7 @@ let enemy_movement_interval = setInterval(enemyMovementsCollisions, 6);
         } 
         else {
             win_screen.style.display = "flex";
-            try_time.innerHTML = `${String(parseInt(time/3600)).padStart("2","0")}:${String(parseInt(time%3600/60)).padStart("2","0")}:${String(parseInt(time%3600%60/1)).padStart("2","0")}.${String(parseInt(time%3600%60))}`;
+            try_time.innerHTML = `${String(parseInt(time/3600)).padStart("2","0")}:${String(parseInt(time%3600/60)).padStart("2","0")}:${String(parseInt(time%3600%60/1)).padStart("2","0")}.${String(parseInt(time%3600%60%1*10))}`;
         }
     }
     
