@@ -143,7 +143,6 @@ let TIMER = setInterval( () => { time += 0.1; }, 100);
             background_music.play();
         }
 
-        winLostScreen("win");
         let game_display_width = parseInt(getComputedStyle(game_display).width);
         let game_display_height = parseInt(getComputedStyle(game_display).height);
         let player_width = parseInt(getComputedStyle(player).width);
