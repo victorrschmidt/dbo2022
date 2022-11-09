@@ -1,0 +1,20 @@
+{
+    "short_name": "KagiS",
+    "name": "Kagi Shikaku",
+    "lang": "pt-br",
+    "description": "Site de exemplo do PWA",
+    "start_url": "./index.html",
+    "scope":"./",
+    "background_color": "#00aae7",
+    "theme_color": "#00aae7",
+    "dir": "ltr",
+    "display": "fullscreen",
+    "orientation": "any",
+    "icons": [
+        {
+         "src": "./icon/favicon-16x16-dunplab-manifest-9314.png",
+         "type": "image/png",
+         "sizes": "192x192"
+        }
+       ]
+   }
