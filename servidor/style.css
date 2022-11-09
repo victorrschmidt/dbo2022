@@ -37,7 +37,7 @@ main {
 #game-display {
     z-index: 1;
     position: relative;
-    background-image: url("img_audio/display_background.png");
+    background-image: url("image/display_background.png");
     background-size: contain;
     outline: solid #989898 4px;
     width: 100.0%;
@@ -51,7 +51,7 @@ main {
 }
 #key-div {
     z-index: 2;
-    background-image: url("img_audio/key_image.png");
+    background-image: url("image/key_image.png");
     top: 6.0%;
     left: 45.5%;
     width: 9.0%;
@@ -184,10 +184,10 @@ button.restart-button:hover {
     opacity: 0.7;
 }
 .audio-on {
-    background-image: url("img_audio/audio_on.png");
+    background-image: url("image/audio_on.png");
 }
 .audio-off {
-    background-image: url("img_audio/audio_off.png");
+    background-image: url("image/audio_off.png");
 }
 footer {
     background-color: #8C16C7;
