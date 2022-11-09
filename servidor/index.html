@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="shortcut icon" href="./icon/favicon-16x16-dunplab-manifest-9314.png" type="image/png">
+    <link rel="icon" href="./icon/favicon-16x16-dunplab-manifest-9314.png" type="image/png">
+    <title>PWA</title>
+    <script>
+        if('serviceWorker' in navigator) 
+        {
+            navigator.serviceWorker.register('./sw.js')
+	          .then(function () {console.log('service worker registered');})
+	          .catch(function () {console.log('service worker failed'); });
+        }
+    </script>
+</head>
+<body>
+    <header></header>
+    <main>
+        <img src="./image/pwa.png" alt="PWA"><br>
+        <img src="./image/raio.png" alt="Raio" width="300" height="300">
+    </main>
+    <footer></footer>
+</body>
+</html>
