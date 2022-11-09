@@ -2,8 +2,11 @@
 const CACHE_NAME = 'my-site-cache-v1';
 const urlsToCache = [
   './index.html',
-  './image/raio.png',
-  './image/pwa.png',
+  './image/audio_off.png,
+  './image/audio_on.png',
+  './image/display_background.png',
+  './image/github_logo.png',
+  './image/key_image.png',
   './',
   './manifest.json'
 ];
