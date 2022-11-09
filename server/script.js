@@ -9,7 +9,6 @@ try_time = document.getElementById("time"),
 background_music = document.getElementById("background-music"),
 audio_control = document.getElementById("audio-control");
 
-alert("oieee");
 let force_music_pause = false;
 let LEVEL = 1;
 let ENEMIES = [document.getElementById("first-enemy-div")];
