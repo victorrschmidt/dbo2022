@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kagi Shikaku</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP&display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200">
+    <link rel="manifest" href="./manifest.json">
+    <link rel="shortcut icon" href="./icon/favicon-16x16-dunplab-manifest-9314.png" type="image/png">
+    <link rel="icon" href="./icon/favicon-16x16-dunplab-manifest-9314.png" type="image/png">
+    <script>
+        if('serviceWorker' in navigator) 
+        {
+            navigator.serviceWorker.register('./sw.js')
+	          .then(function () {console.log('service worker registered');})
+	          .catch(function () {console.log('service worker failed'); });
+        }
+    </script>
+</head>
+<body>
+    <main>
+        <div id="game-display">
+            <div id="key-div"></div>
+            <div id="first-enemy-div" class="enemy"></div>
+            <div id="player-div"></div>
+            <div id="end-screen">
+                <div id="win-screen">
+                    <h2>Parabéns!</h2>
+                    <div id="win-time">
+                        <p>Tempo:</p>
+                        <p id="time"></p>
+                    </div>
+                    <button class="restart-button" onclick="restartGame()">Jogar novamente</button>
+                </div>
+                <div id="lost-screen">
+                    <h2>Você morreu :(</h2>
+                    <button class="restart-button" onclick="restartGame()">Jogar novamente</button>
+                </div>
+            </div>
+        </div>
+        <div id="game-controls">
+            <div id="control-up" onclick="playerMovement(this.id)">
+                <span class="material-symbols-outlined">arrow_upward</span> 
+            </div>
+            <div id="control-right" onclick="playerMovement(this.id)">
+                <span class="material-symbols-outlined">arrow_right_alt</span> 
+            </div>
+            <div id="control-down" onclick="playerMovement(this.id)">
+                <span class="material-symbols-outlined">arrow_downward</span> 
+            </div>
+            <div id="control-left" onclick="playerMovement(this.id)">
+                <span class="material-symbols-outlined">arrow_back</span>
+            </div>
+            <div id="audio-control" class="audio-on"></div>
+        </div>
+    </main>
+    <footer>
+        <div id="game-title">
+            <img src="image/key_image.png" alt="key_icon">
+            <h1>Kagi Shikaku</h1>
+            <img src="image/key_image.png" alt="key_icon">
+        </div>
+        <div id="footer-sections">
+            <section>
+                <h2>Sobre</h2>
+                <p>
+                    Este jogo foi desenvolvido como o último trabalho do 3° bimestre de Desenvolvimento
+                    Baseado em Objeto (DBO) do 2° ano de Informática do IFRS. Você pode acessar os
+                    arquivos do jogo clicando
+                    <a class="footer-link" href="https://github.com/victorrschmidt/dbo2022/tree/main/jogo_exemplo/versao_final" target="_blank">aqui</a>.
+                </p>
+            </section>
+            <section>
+                <h2>Como jogar</h2>
+                <p>
+                    O objetivo do jogo é mover-se pelo mapa até chegar na chave, assim passando para o 
+                    próximo nível. Porém, caso algum dos inimigos encoste no jogador, ele volta ao
+                    início da fase. O jogo possui 6 fases, e a dificuldade vai aumentando gradualmente.
+                </p>
+            </section>
+            <section>
+                <h2>Github</h2>
+                <a class="footer-link" href="https://github.com/victorrschmidt" target="_blank">
+                    github.com/victorrschmidt
+                </a>
+                <img src="image/github_logo.png" width="120" height="120" alt="GitHub logo">
+            </section>
+        </div>
+    </footer>
+    <audio id="background-music" loop>
+        <source src="image/background_music.mp3">
+    </audio>
+    <script src="script.js"></script>
+</body>
+</html>
