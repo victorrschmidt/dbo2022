@@ -26,11 +26,6 @@
 			"sizes": "152x152"
 		},
 		{
-			"src": "/apple-icon-144x144-seochecker-manifest-4413.png",
-			"type": "image/png",
-			"sizes": "144x144"
-		},
-		{
 			"src": "/apple-icon-120x120-seochecker-manifest-4413.png",
 			"type": "image/png",
 			"sizes": "120x120"
