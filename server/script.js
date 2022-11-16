@@ -19,9 +19,7 @@ clear_option = document.getElementById("clear-option"),
 records_option = document.getElementById("records-option"),
 records_table = document.getElementById("records-table"),
 back_records = document.getElementById("back-records"),
-top_1 = document.getElementById("top-1"),
-top_2 = document.getElementById("top-2"),
-top_3 = document.getElementById("top-3"),
+melhor_tempo = document.getElementById("melhor-tempo"),
 end_screen = document.getElementById("end-screen"),
 win_screen = document.getElementById("win-screen"),
 lost_screen = document.getElementById("lost-screen"),
@@ -35,7 +33,7 @@ let ENEMIES = [document.getElementById("first-enemy-div")];
 let ENEMIES_MOVE_DIRECTION = ["right"];
 let ENEMIES_POSITIONS = [];
 let PLAYER_FREEZE = true;
-let DIFICULDADE = 1;
+let DIFICULDADE;
 let time = 0;
 let TIMER;
 let LOCALSTORAGE = true;
@@ -45,6 +43,27 @@ let LOCALSTORAGE = true;
     {
         LOCALSTORAGE = false;
         console.log("Não possível salvar os recordes no Local Storage.");
+    }
+
+    if(localStorage.getItem("Dificuldade") == null)
+    {
+        localStorage.setItem("Dificuldade", 2);
+        DIFICULDADE = 2;
+    } else {
+        DIFICULDADE = Number(localStorage.getItem("Dificuldade"));
+    }
+
+    if(localStorage.getItem("Cor") == null)
+    {
+        localStorage.setItem("Cor", "#800080");
+    } else {
+        player.style.backgroundColor = localStorage.getItem("Cor");
+    }
+
+    if(localStorage.getItem("Record") != null)
+    {
+        let time = Number(localStorage.getItem("Record"));
+        melhor_tempo.innerHTML = `${String(parseInt(time/3600)).padStart("2","0")}:${String(parseInt(time%3600/60)).padStart("2","0")}:${String(parseInt(time%3600%60/1)).padStart("2","0")}.${String(parseInt(time%3600%60%1*10))}`;
     }
 
     // Remover as divs dos inimigos da fase passada e criar "number" inimigos para a próxima fase
@@ -241,12 +260,11 @@ let LOCALSTORAGE = true;
         {
             key.style.display = "none";
             LEVEL++;
-            createLevel();
-
             if(LOCALSTORAGE)
             {
                 localStorage.setItem("Fase", LEVEL);
             }
+            createLevel();
         }
     }
 
@@ -353,19 +371,20 @@ let enemy_speed;
         {
             key.style.display = "none";
             lost_screen.style.display = "flex";
-            localStorage.removeItem("Tempo");
         } 
         else {
             win_screen.style.display = "flex";
-            try_time.innerHTML = `${String(parseInt(time/3600)).padStart("2","0")}:${String(parseInt(time%3600/60)).padStart("2","0")}:${String(parseInt(time%3600%60/1)).padStart("2","0")}.${String(parseInt(time%3600%60%1*10))}`;
+            let extense = `${String(parseInt(time/3600)).padStart("2","0")}:${String(parseInt(time%3600/60)).padStart("2","0")}:${String(parseInt(time%3600%60/1)).padStart("2","0")}.${String(parseInt(time%3600%60%1*10))}`;
+            try_time.innerHTML = extense;
             
-            if(localStorage.getItem("Records_salvos") == null)
+            if(localStorage.getItem("Record") == null)
             {
-                localStorage.setItem("Records_salvos", 1);
+                localStorage.setItem("Record", time);
+                melhor_tempo.innerHTML = extense;
             }
-            else if(localStorage.getItem("Records_salvos") < 3){
-                let n = Number(localStorage.getItem("Records_salvos"));
-                localStorage.setItem("Records_salvos", n+1);
+            else if(time < Number(localStorage.getItem("Record"))) {
+                localStorage.setItem("Record", time);
+                melhor_tempo.innerHTML = extense;
             }
         }
 
@@ -373,7 +392,7 @@ let enemy_speed;
         localStorage.removeItem("Fase");
         localStorage.removeItem("Tempo");
     }
-    
+
     // Reiniciar o jogo
     function restartGame()
     {
@@ -475,18 +494,21 @@ let enemy_speed;
 
     easy_option.addEventListener("click", () => {
         DIFICULDADE = 1;
+        localStorage.setItem("Dificuldade", 1);
         console.log("Dificuldade atual: Fácil");
         mainMenu();
     });
 
     medium_option.addEventListener("click", () => {
         DIFICULDADE = 2;
+        localStorage.setItem("Dificuldade", 2);
         console.log("Dificuldade atual: Médio");
         mainMenu();
     });
 
     hard_option.addEventListener("click", () => {
         DIFICULDADE = 3;
+        localStorage.setItem("Dificuldade", 3);
         console.log("Dificuldade atual: Difícil");
         mainMenu();
     });
@@ -504,6 +526,7 @@ let enemy_speed;
     apply_color.addEventListener("click", () => {
         show_color.style.backgroundColor = player_color.value;
         player.style.backgroundColor = player_color.value;
+        localStorage.setItem("Cor", player_color.value);
     });
 
     confirm_color.addEventListener("click", () => {
@@ -511,9 +534,8 @@ let enemy_speed;
     });
 
     clear_option.addEventListener("click", () => {
-        top_1.innerHTML = "--";
-        top_2.innerHTML = "--";
-        top_3.innerHTML = "--";
+        melhor_tempo.innerHTML = "--";
+        localStorage.removeItem("Record");
         console.log("Recordes apagados do Local Storage.");
         dificulty_option.style.display = "none";
         colors_option.style.display = "none";

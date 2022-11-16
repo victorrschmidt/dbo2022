@@ -129,7 +129,7 @@ button.restart-button:hover, #start-screen > *:not(.unhover):hover {
 }
 #records-table {
     opacity: 1;
-    font-size: 1.2em;
+    font-size: 1.8em;
 }
 #end-screen h2 {
     text-align: center;
