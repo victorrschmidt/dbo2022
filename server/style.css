@@ -74,12 +74,11 @@ main {
     width: 6.0%;
     height: 8.0%;
 }
-#end-screen {
+#start-screen, #end-screen {
     z-index: 6;
     background-color: #8C16C7;
     color: #FFBF00;
     outline: solid #FFBF00 4px;
-    display: none;
     justify-content: center;
     top: 10.0%;
     left: 15.0%;
@@ -88,6 +87,49 @@ main {
     padding: 0.6rem;
     border-radius: 16px;
     transition: 0.25s ease-out;
+}
+#start-screen {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+}
+button.restart-button, #start-screen > * {
+    opacity: 0.8;
+    background-color: #58316B;
+    color: #FFBF00;
+    width: 80.0%;
+    border-radius: 12px;
+    font-style: italic;
+    font-size: 2.0em;
+    text-align: center;
+    transition: 0.25s ease-out;
+}
+button.restart-button:hover, #start-screen > *:not(.unhover):hover {
+    opacity: 1;
+    cursor: pointer;
+}
+#dificulty-option, #easy-option, #medium-option, #hard-option, 
+#colors-option, #show-color, #player-color, #apply-color, #confirm-color,
+#clear-option, #records-table, #back-records,
+#end-screen {
+    display: none;
+}
+#show-color {
+    opacity: 1;
+    background-color: #800080;
+    width: 20.0%;
+    height: 25.0%;
+    border-radius: 0;
+}
+#player-color {
+    opacity: 1;
+    height: 15.0%;
+    cursor: pointer;
+}
+#records-table {
+    opacity: 1;
+    font-size: 1.2em;
 }
 #end-screen h2 {
     text-align: center;
@@ -112,20 +154,6 @@ p#time {
     margin-left: 0.3rem;
     font-style: italic;
     font-size: 2.0em;
-}
-button.restart-button {
-    opacity: 0.8;
-    background-color: #58316B;
-    color: #FFBF00;
-    width: 80.0%;
-    border-radius: 12px;
-    font-style: italic;
-    font-size: 2.0em;
-    cursor: pointer;
-    transition: 0.25s ease-out;
-}
-button.restart-button:hover {
-    opacity: 1;
 }
 #game-controls {
     position: relative;

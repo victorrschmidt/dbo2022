@@ -28,6 +28,28 @@
             <div id="key-div"></div>
             <div id="first-enemy-div" class="enemy"></div>
             <div id="player-div"></div>
+            <div id="start-screen">
+                <div id="continue-option">Continuar</div>
+                <div id="newgame-option">Novo Jogo</div>
+                <div id="config-option">Configurações</div>
+                <div id="dificulty-option">Dificuldade</div>
+                <div id="easy-option">Fácil</div>
+                <div id="medium-option">Médio</div>
+                <div id="hard-option">Difícil</div>
+                <div id="colors-option">Cor do jogador</div>
+                <div id="show-color" class="unhover"></div>
+                <input type="color" id="player-color" class="unhover">
+                <button id="apply-color">Aplicar</button>
+                <button id="confirm-color">Confirmar</button>
+                <div id="clear-option">Apagar recordes</div>
+                <div id="records-option">Recordes</div>
+                <div id="records-table" class="unhover">
+                    <p>Top 1:</p><p id="top-1">--</p>
+                    <p>Top 2:</p><p id="top-2">--</p>
+                    <p>Top 3:</p><p id="top-3">--</p>
+                </div>
+                <button id="back-records">Voltar</button>
+            </div>
             <div id="end-screen">
                 <div id="win-screen">
                     <h2>Parabéns!</h2>
@@ -36,10 +58,12 @@
                         <p id="time"></p>
                     </div>
                     <button class="restart-button" onclick="restartGame()">Jogar novamente</button>
+                    <button class="restart-button" onclick="backToMenu()">Voltar ao menu</button>
                 </div>
                 <div id="lost-screen">
                     <h2>Você morreu :(</h2>
                     <button class="restart-button" onclick="restartGame()">Jogar novamente</button>
+                    <button class="restart-button" onclick="backToMenu()">Voltar ao menu</button>
                 </div>
             </div>
         </div>

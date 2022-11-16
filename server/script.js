@@ -2,6 +2,26 @@ const game_display = document.getElementById("game-display"),
 player = document.getElementById("player-div"),
 key = document.getElementById("key-div"),
 keyboard_keys = { 38: "up", 39: "right", 40: "down", 37: "left" },
+start_screen = document.getElementById("start-screen"),
+continue_option = document.getElementById("continue-option"),
+newgame_option = document.getElementById("newgame-option"),
+config_option = document.getElementById("config-option"),
+dificulty_option = document.getElementById("dificulty-option"),
+easy_option = document.getElementById("easy-option"),
+medium_option = document.getElementById("medium-option"),
+hard_option = document.getElementById("hard-option"),
+colors_option = document.getElementById("colors-option"),
+show_color = document.getElementById("show-color"),
+player_color = document.getElementById("player-color"),
+apply_color = document.getElementById("apply-color"),
+confirm_color = document.getElementById("confirm-color"),
+clear_option = document.getElementById("clear-option"),
+records_option = document.getElementById("records-option"),
+records_table = document.getElementById("records-table"),
+back_records = document.getElementById("back-records"),
+top_1 = document.getElementById("top-1"),
+top_2 = document.getElementById("top-2"),
+top_3 = document.getElementById("top-3"),
 end_screen = document.getElementById("end-screen"),
 win_screen = document.getElementById("win-screen"),
 lost_screen = document.getElementById("lost-screen"),
@@ -14,9 +34,18 @@ let LEVEL = 1;
 let ENEMIES = [document.getElementById("first-enemy-div")];
 let ENEMIES_MOVE_DIRECTION = ["right"];
 let ENEMIES_POSITIONS = [];
-let PLAYER_FREEZE = false;
+let PLAYER_FREEZE = true;
+let DIFICULDADE = 1;
 let time = 0;
-let TIMER = setInterval( () => { time += 0.1; }, 100);
+let TIMER;
+let LOCALSTORAGE = true;
+
+    // Local storage
+    if(typeof(Storage) == "undefined")
+    {
+        LOCALSTORAGE = false;
+        console.log("Não possível salvar os recordes no Local Storage.");
+    }
 
     // Remover as divs dos inimigos da fase passada e criar "number" inimigos para a próxima fase
     function removeCreateEnemies(number)
@@ -138,11 +167,6 @@ let TIMER = setInterval( () => { time += 0.1; }, 100);
     // Movimento do jogador
     function playerMovement(key)
     {
-        if(force_music_pause == false)
-        {
-            background_music.play();
-        }
-
         let game_display_width = parseInt(getComputedStyle(game_display).width);
         let game_display_height = parseInt(getComputedStyle(game_display).height);
         let player_width = parseInt(getComputedStyle(player).width);
@@ -153,6 +177,11 @@ let TIMER = setInterval( () => { time += 0.1; }, 100);
         let player_speed = Math.ceil(game_display_width/55);
          
         if(PLAYER_FREEZE == false){
+            
+            if(force_music_pause == false)
+            {
+                background_music.play();
+            }
 
             if(key == "control-up")
             {
@@ -213,8 +242,16 @@ let TIMER = setInterval( () => { time += 0.1; }, 100);
             key.style.display = "none";
             LEVEL++;
             createLevel();
+
+            if(LOCALSTORAGE)
+            {
+                localStorage.setItem("Fase", LEVEL);
+            }
         }
     }
+
+let enemy_movement_interval;
+let enemy_speed;
 
     // Movimentação dos inimigos
     function enemyMovementsCollisions()
@@ -232,7 +269,18 @@ let TIMER = setInterval( () => { time += 0.1; }, 100);
             let player_top_pos = parseInt(getComputedStyle(player).top);
             let player_left_pos = parseInt(getComputedStyle(player).left);
 
-            let enemy_speed = Math.ceil(game_display_width/400);
+            if(DIFICULDADE == 1)
+            { 
+                enemy_speed = Math.ceil(game_display_width/400);
+            }
+            else if(DIFICULDADE == 2)
+            {
+                enemy_speed = Math.ceil(game_display_width/300);
+            }
+            else {
+                enemy_speed = Math.ceil(game_display_width/200);
+            }
+                
 
             if(ENEMIES_MOVE_DIRECTION[i] == "right")
             {
@@ -292,9 +340,7 @@ let TIMER = setInterval( () => { time += 0.1; }, 100);
             }
         }
     }
-
-let enemy_movement_interval = setInterval(enemyMovementsCollisions, 6);
-    
+  
     // Mostrar tela de vitória ou derrota
     function winLostScreen(result)
     {
@@ -307,19 +353,30 @@ let enemy_movement_interval = setInterval(enemyMovementsCollisions, 6);
         {
             key.style.display = "none";
             lost_screen.style.display = "flex";
+            localStorage.removeItem("Tempo");
         } 
         else {
             win_screen.style.display = "flex";
             try_time.innerHTML = `${String(parseInt(time/3600)).padStart("2","0")}:${String(parseInt(time%3600/60)).padStart("2","0")}:${String(parseInt(time%3600%60/1)).padStart("2","0")}.${String(parseInt(time%3600%60%1*10))}`;
+            
+            if(localStorage.getItem("Records_salvos") == null)
+            {
+                localStorage.setItem("Records_salvos", 1);
+            }
+            else if(localStorage.getItem("Records_salvos") < 3){
+                let n = Number(localStorage.getItem("Records_salvos"));
+                localStorage.setItem("Records_salvos", n+1);
+            }
         }
+
+        time = 0;
+        localStorage.removeItem("Fase");
+        localStorage.removeItem("Tempo");
     }
     
     // Reiniciar o jogo
     function restartGame()
     {
-        time = 0;
-        TIMER = setInterval( () => { time += 0.1; }, 100);
-
         end_screen.style.display = "none";
         win_screen.style.display = "none";
         lost_screen.style.display = "none";
@@ -329,6 +386,18 @@ let enemy_movement_interval = setInterval(enemyMovementsCollisions, 6);
 
         enemy_movement_interval = setInterval(enemyMovementsCollisions, 6);
         PLAYER_FREEZE = false;
+        TIMER = setInterval( () => { time += 0.1; localStorage.setItem("Tempo", time) }, 100); 
+    }
+
+    // Volta ao menu
+    function backToMenu()
+    {
+        end_screen.style.display = "none";
+        win_screen.style.display = "none";
+        lost_screen.style.display = "none";
+        LEVEL = 1;
+        createLevel();
+        start_screen.style.display = "flex";
     }
     
     // Controle da música
@@ -344,4 +413,123 @@ let enemy_movement_interval = setInterval(enemyMovementsCollisions, 6);
             background_music.play();
             audio_control.setAttribute("class", "audio-on");
         }
+    });
+
+    // Opções do menu inicial
+    function mainMenu()
+    {
+        continue_option.style.display = "initial";
+        newgame_option.style.display = "initial";
+        config_option.style.display = "initial";
+        records_option.style.display = "initial";
+        easy_option.style.display = "none";
+        medium_option.style.display = "none";
+        hard_option.style.display = "none";
+        show_color.style.display = "none";
+        player_color.style.display = "none";
+        apply_color.style.display = "none";
+        confirm_color.style.display = "none";
+        records_table.style.display = "none";
+        back_records.style.display = "none";
+    }
+    
+    continue_option.addEventListener("click", () => {
+        start_screen.style.display = "none";
+        LEVEL = Number(localStorage.getItem("Fase"));
+        if(LEVEL == 0)
+        {
+            LEVEL++;
+        }
+        createLevel();
+        enemy_movement_interval = setInterval(enemyMovementsCollisions, 6);
+        PLAYER_FREEZE = false;
+        let tempo_anterior = Number(localStorage.getItem("Tempo"));
+        TIMER = setInterval( () => { time += 0.1; localStorage.setItem("Tempo", time + tempo_anterior) }, 100); 
+    });
+
+    newgame_option.addEventListener("click", () => {
+        start_screen.style.display = "none";
+        enemy_movement_interval = setInterval(enemyMovementsCollisions, 6);
+        PLAYER_FREEZE = false;
+        TIMER = setInterval( () => { time += 0.1; localStorage.setItem("Tempo", time) }, 100); 
+    });
+
+    config_option.addEventListener("click", () => {
+        continue_option.style.display = "none";
+        newgame_option.style.display = "none";
+        config_option.style.display = "none";
+        records_option.style.display = "none";
+        dificulty_option.style.display = "initial";
+        colors_option.style.display = "initial";
+        clear_option.style.display = "initial";
+    });
+
+    dificulty_option.addEventListener("click", () => {
+        dificulty_option.style.display = "none";
+        colors_option.style.display = "none";
+        clear_option.style.display = "none";
+        easy_option.style.display = "initial";
+        medium_option.style.display = "initial";
+        hard_option.style.display = "initial";
+    });
+
+    easy_option.addEventListener("click", () => {
+        DIFICULDADE = 1;
+        console.log("Dificuldade atual: Fácil");
+        mainMenu();
+    });
+
+    medium_option.addEventListener("click", () => {
+        DIFICULDADE = 2;
+        console.log("Dificuldade atual: Médio");
+        mainMenu();
+    });
+
+    hard_option.addEventListener("click", () => {
+        DIFICULDADE = 3;
+        console.log("Dificuldade atual: Difícil");
+        mainMenu();
+    });
+
+    colors_option.addEventListener("click", () => {
+        dificulty_option.style.display = "none";
+        colors_option.style.display = "none";
+        clear_option.style.display = "none";
+        show_color.style.display = "initial";
+        player_color.style.display = "initial";
+        apply_color.style.display = "initial";
+        confirm_color.style.display = "initial";
+    });
+
+    apply_color.addEventListener("click", () => {
+        show_color.style.backgroundColor = player_color.value;
+        player.style.backgroundColor = player_color.value;
+    });
+
+    confirm_color.addEventListener("click", () => {
+        mainMenu();
+    });
+
+    clear_option.addEventListener("click", () => {
+        top_1.innerHTML = "--";
+        top_2.innerHTML = "--";
+        top_3.innerHTML = "--";
+        console.log("Recordes apagados do Local Storage.");
+        dificulty_option.style.display = "none";
+        colors_option.style.display = "none";
+        clear_option.style.display = "none";
+        mainMenu();
+    });
+
+    records_option.addEventListener("click", () => {
+        continue_option.style.display = "none";
+        newgame_option.style.display = "none";
+        config_option.style.display = "none";
+        records_option.style.display = "none";
+        records_table.style.display = "initial";
+        back_records.style.display = "initial";
+    });
+
+    back_records.addEventListener("click", () => {
+        mainMenu();
     });
