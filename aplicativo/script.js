@@ -108,6 +108,9 @@ let LOCALSTORAGE = true;
                 break;
 
             case 2:
+                player.style.top = "6%";
+                player.style.left = "45.5%";
+
                 key.style.display = "unset";  
                 key.style.top = "86%";
                 key.style.left = "45.5%";
@@ -117,7 +120,10 @@ let LOCALSTORAGE = true;
                 removeCreateEnemies(2);
                 break;
 
-            case 3:
+            case 3: 
+                player.style.top = "86%";
+                player.style.left = "45.5%";
+
                 key.style.display = "unset";  
                 key.style.top = "46%";
                 key.style.left = "90%";
@@ -128,6 +134,9 @@ let LOCALSTORAGE = true;
                 break;
 
             case 4:
+                player.style.top = "46%";
+                player.style.left = "90%";
+
                 key.style.display = "unset";  
                 key.style.top = "46%";
                 key.style.left = "2%";
@@ -138,6 +147,9 @@ let LOCALSTORAGE = true;
                 break;
 
             case 5:
+                player.style.top = "46%";
+                player.style.left = "2%";
+
                 key.style.display = "unset";  
                 key.style.top = "46%";
                 key.style.left = "45.5%";
@@ -148,6 +160,9 @@ let LOCALSTORAGE = true;
                 break;
 
             case 6:
+                player.style.top = "46%";
+                player.style.left = "45.5%";
+
                 key.style.display = "unset";
                 key.style.top = "86%";
                 key.style.left = "45.5%";
@@ -158,6 +173,9 @@ let LOCALSTORAGE = true;
                 break;
 
             case 7:
+                player.style.top = "86%";
+                player.style.left = "45.5%";
+
                 key.style.display = "unset"; 
                 key.style.top = "6%";
                 key.style.left = "45.5%";
