@@ -2,7 +2,7 @@
 
 server
 
-https://victorrschmidt.github.io/dbo2022/server/
+https://victorrschmidt.github.io/dbo2022/aplicativo/
 
 jogo_exemplo
 
