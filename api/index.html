@@ -1,32 +1,22 @@
-<!DOCTYPE HTML>
+<!DOCTYPE html>
 <html lang="pt-br">
-
 <head>
-    <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta charset="UTF-8">
-    <title>Ola</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>API filmes</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <div id="mostra"></div>
     <script>
-    
-    async function buscaApi() {
-    const painel = document.querySelector('#mostra');
-    const url='https://swapi.dev/api/films/';
-    let resposta=  await fetch(url);
-    let js = await resposta.json();
-    
-    painel.innerHTML=js[0].title;
-    
-    console.log(js);
-}
-
-buscaApi();
-
- //https://swapi.dev/api/films/         ***  js.results[1].title;  ***           https://swapi.dev/documentation
- //https://parallelum.com.br/fipe/api/v1/carros/marcas    ***  js[27].nome   *** https://deividfortuna.github.io/fipe/
- 
- 
-</script>
+        async function buscaApi() {
+            const painel = document.querySelector('#mostra');
+            const url='https://swapi.dev/api/films/';
+            let resposta=  await fetch(url);
+            let js = await resposta.json();  
+            console.log(js);
+        }
+        importarAPI();
+    </script>
 </body>
 </html>
