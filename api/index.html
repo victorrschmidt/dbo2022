@@ -5,18 +5,92 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>API filmes</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap" rel="stylesheet">
 </head>
-<body>
-    <div id="mostra"></div>
+    <header>
+        <div id="header-content">
+            <h1>Star Wars API</h1>
+        </div>
+    </header>
+    <main>
+        <form>
+            <fieldset>
+                <div class="campo-form">
+                    <label for="nome">Nome do filme</label>
+                    <input id="nome" type="text" placeholder="Digite o nome do filme" autofocus>
+                </div>
+                <p id="ou">OU</p>
+                <div class="campo-form">
+                    <label for="ano">Ano do filme</label>
+                    <input id="ano" type="number" placeholder="Digite o ano do filme">
+                </div>
+            </fieldset>
+            <button id="busca" type="button">Buscar</button>
+            <div id="info-filme">
+
+            </div>
+        </form>
+    </main>
+    <footer>
+        <h2>Como funciona? Basta digitar o nome ou o ano de lançamento de um filme da franquia Star Wars para ver seus dados!</h2>
+    </footer>
     <script>
-        async function buscaApi() {
-            const painel = document.querySelector('#mostra');
-            const url='https://swapi.dev/api/films/';
-            let resposta=  await fetch(url);
-            let js = await resposta.json();  
-            console.log(js);
+        const nome = document.getElementById("nome");
+        const ano = document.getElementById("ano");
+        const busca = document.getElementById("busca");
+        const info = document.getElementById("info-filme");
+        let DADOS;
+
+        async function importarAPI()
+        {
+            const url = "https://swapi.dev/api/films/";
+            const info = await fetch(url);
+            DADOS = await info.json();
+            console.log(DADOS); 
         }
         importarAPI();
+        
+        async function buscaAPI()
+        {
+            nome.style.borderColor = "black";
+            ano.style.borderColor = "black";
+
+            if(nome.value.trim() != "" || ano.value.trim() != "")  // Busca 
+            {
+                let filme;
+
+                if(nome.value.trim() != "")  // Busca por nome
+                {
+                    filme = DADOS["results"].filter(filme => filme["title"].toUpperCase() == nome.value.toUpperCase().trim())[0];
+                }
+                else {  // Busca por ano
+                    filme = DADOS["results"].filter(filme => filme["release_date"].slice(0,4) == ano.value.trim())[0];
+                }
+
+                if(filme === undefined)
+                {
+                    info.innerHTML ="Nenhum filme encontrado, verifique novamente o(s) dado(s) preenchidos.";
+                }
+                else {
+                    info.innerHTML = `
+                        <p><b>Nome:</b> ${filme["title"]}</p>
+                        <p><b>Data de lançamento:</b> ${filme["release_date"]}</p>
+                        <p><b>Diretor:</b> ${filme["director"]}</p>
+                        <p><b>Produtor(es):</b> ${filme["producer"]}</p>
+                        <p><b>Texto de abertura:</b> ${filme["opening_crawl"]}</p>`;
+                    console.log(filme);
+                }
+            }
+            else {  // Erro; Nenhum dos campos foi preenchido
+                info.innerHTML ="Preencha pelo menos um dos campos.";
+                nome.style.borderColor = "red";
+                ano.style.borderColor = "red";
+            }
+        }
+        
+        busca.addEventListener("click", buscaAPI);
     </script>
 </body>
 </html>
