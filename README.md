@@ -2,7 +2,7 @@
 
 ## Sobre
 
-Este repositório foi utilizado para armazenar os arquivos para atividades e trabalhos de Desenvolvimento Baseado em Objeto do segundo ano de Info-IFRS
+Este repositório foi utilizado para armazenar os arquivos para atividades e trabalhos de Desenvolvimento Baseado em Objeto do segundo ano de Info-IFRS. Este repositório está inativo e não será atualizado.
 
 ## Links
 
