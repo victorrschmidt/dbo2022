@@ -1,7 +1,6 @@
 <h1 align="center">dbo2022</h1>
 
 ### Links
-
 #### api - https://victorrschmidt.github.io/dbo2022/api/
 
 server
