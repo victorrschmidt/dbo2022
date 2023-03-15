@@ -20,8 +20,11 @@ Este repositório foi utilizado para armazenar os arquivos para atividades e tra
 
 ### trab_css_final - https://victorrschmidt.github.io/dbo2022/trab_css_final/pokesoft/In%C3%ADcio/
 
-- Quarto trabalho: Reestruturar o trabalho de HMTL-CSS utilizando flexbox e grid para deixá-lo responsivo.
+- Quarto trabalho: Reestruturar o trabalho de HMTL-CSS utilizando flexbox e grid de CSS para deixá-lo responsivo e utilização de Javascript para adicionar funcionalidades para os formulários (verificação e prevenção de erros).
 
 ### jogo_exemplo - https://victorrschmidt.github.io/dbo2022/jogo_exemplo/versao_final/
+
+- Quinto 
+
 ### app - https://victorrschmidt.github.io/dbo2022/app/
 ### api - https://victorrschmidt.github.io/dbo2022/api/
