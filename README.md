@@ -4,7 +4,7 @@
 
 Este repositório foi utilizado para armazenar os arquivos para atividades e trabalhos de Desenvolvimento Baseado em Objeto do segundo ano de Info-IFRS. Este repositório está inativo e não será atualizado.
 
-## Links
+## Trabalhos
 
 ### trab1 - https://victorrschmidt.github.io/dbo2022/trab1/
 ### trab_site_css - https://victorrschmidt.github.io/dbo2022/trab_site_css/pokesoft/In%C3%ADcio/
