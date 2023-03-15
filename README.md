@@ -2,7 +2,7 @@
 
 ## Sobre
 
-Este repositório foi utilizado para armazenar os arquivos para atividades e trabalhos de Desenvolvimento Baseado em Objeto do segundo ano de Info-IFRS. Este repositório está inativo e não será atualizado.
+Este repositório foi utilizado para armazenar os arquivos de atividades e trabalhos de Desenvolvimento Baseado em Objeto do segundo ano de Info-IFRS. Este repositório está inativo e não será atualizado.
 
 ## Trabalhos
 
@@ -20,11 +20,11 @@ Este repositório foi utilizado para armazenar os arquivos para atividades e tra
 
 ### trab_css_final - https://victorrschmidt.github.io/dbo2022/trab_css_final/pokesoft/In%C3%ADcio/
 
-- Quarto trabalho: Reestruturar o trabalho de HMTL-CSS utilizando flexbox e grid de CSS para deixá-lo responsivo e utilização de Javascript para adicionar funcionalidades para os formulários (verificação e prevenção de erros).
+- Quarto trabalho: Reestruturação do trabalho de HMTL-CSS utilizando flexbox e grid de CSS para deixá-lo responsivo e Javascript para adicionar funcionalidades para os formulários (verificação e prevenção de erros).
 
 ### jogo_exemplo - https://victorrschmidt.github.io/dbo2022/jogo_exemplo/versao_final/
 
-- Quinto 
+- Quinto trabalho:
 
 ### app - https://victorrschmidt.github.io/dbo2022/app/
 ### api - https://victorrschmidt.github.io/dbo2022/api/
