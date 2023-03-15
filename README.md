@@ -8,10 +8,16 @@ Este repositório foi utilizado para armazenar os arquivos para atividades e tra
 
 ### trab1 - https://victorrschmidt.github.io/dbo2022/trab1/
 
-- adsad
+- Primeiro trabalho: Básico sobre tags e estruturação de um arquivo HTML.
 
 ### trab_site_css - https://victorrschmidt.github.io/dbo2022/trab_site_css/pokesoft/In%C3%ADcio/
+
+- Segundo trabalho: Criar um site fictício utilizando HTML e CSS.
+ 
 ### trab_site_bootstrap - https://victorrschmidt.github.io/dbo2022/trab_site_bootstrap/pokesoft/In%C3%ADcio/
+
+- Terceiro trabalho:
+
 ### trab_css_final - https://victorrschmidt.github.io/dbo2022/trab_css_final/pokesoft/In%C3%ADcio/
 ### jogo_exemplo - https://victorrschmidt.github.io/dbo2022/jogo_exemplo/versao_final/
 ### app - https://victorrschmidt.github.io/dbo2022/app/
