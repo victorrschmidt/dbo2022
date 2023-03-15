@@ -28,6 +28,8 @@ Este repositório foi utilizado para armazenar os arquivos de atividades e traba
 
 ### app - https://victorrschmidt.github.io/dbo2022/app/
 
-- Sexto trabalho: 
+- Sexto trabalho: Básico sobre JSON; Transformar o site anterior em um aplicativo através de application manifest para armazenamento dados.
 
 ### api - https://victorrschmidt.github.io/dbo2022/api/
+
+- Último trabalho: Criar um site que utilize alguma API para receber informações de uma URL externa.
