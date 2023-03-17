@@ -6,30 +6,30 @@ Este repositório foi utilizado para armazenar os arquivos de atividades e traba
 
 ## Trabalhos
 
-### trab1 - https://victorrschmidt.github.io/dbo2022/trab1/
+### trab1 - https://victorrschmidt.github.io/dbo2022/trab1
 
 - Primeiro trabalho: Básico sobre tags e estruturação de um arquivo HTML.
 
-### trab_site_css - https://victorrschmidt.github.io/dbo2022/trab_site_css/pokesoft/In%C3%ADcio/
+### trab_site_css - https://victorrschmidt.github.io/dbo2022/trab_site_css/pokesoft/In%C3%ADcio
 
 - Segundo trabalho: Criar um site fictício utilizando HTML-CSS.
  
-### trab_site_bootstrap - https://victorrschmidt.github.io/dbo2022/trab_site_bootstrap/pokesoft/In%C3%ADcio/
+### trab_site_bootstrap - https://victorrschmidt.github.io/dbo2022/trab_site_bootstrap/pokesoft/In%C3%ADcio
 
 - Terceiro trabalho: Utilização do framework Bootstrap para melhorar a responsividade do site anterior.
 
-### trab_css_final - https://victorrschmidt.github.io/dbo2022/trab_css_final/pokesoft/In%C3%ADcio/
+### trab_css_final - https://victorrschmidt.github.io/dbo2022/trab_css_final/pokesoft/In%C3%ADcio
 
 - Quarto trabalho: Reestruturação do trabalho de HMTL-CSS utilizando flexbox e grid de CSS para deixá-lo responsivo. Aplicação de DOM com Javascript para adicionar funcionalidades para os formulários (verificação e prevenção de erros).
 
-### jogo_exemplo - https://victorrschmidt.github.io/dbo2022/jogo_exemplo/versao_final/
+### jogo_exemplo - https://victorrschmidt.github.io/dbo2022/jogo_exemplo/versao_final
 
 - Quinto trabalho: Criar um jogo-site utilizando HTML, CSS e Javascript; Aplicação de DOM;
 
-### app - https://victorrschmidt.github.io/dbo2022/app/
+### app - https://victorrschmidt.github.io/dbo2022/app
 
 - Sexto trabalho: Básico sobre JSON; Transformar o site anterior em um aplicativo através de application manifest para armazenamento dados.
 
-### api - https://victorrschmidt.github.io/dbo2022/api/
+### api - https://victorrschmidt.github.io/dbo2022/api
 
 - Último trabalho: Criar um site que utilize alguma API para receber informações de uma URL externa.
