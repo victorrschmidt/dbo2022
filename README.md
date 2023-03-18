@@ -24,11 +24,11 @@ Este repositório foi utilizado para armazenar os arquivos de trabalhos de Desen
 
 ### jogo_exemplo - https://victorrschmidt.github.io/dbo2022/jogo_exemplo/versao_final
 
-- Quinto trabalho: Criar um jogo-site utilizando HTML, CSS e Javascript; Aplicação de DOM;
+- Quinto trabalho: Criar um jogo-site utilizando HTML, CSS e Javascript; Aplicação de DOM.
 
 ### app - https://victorrschmidt.github.io/dbo2022/app
 
-- Sexto trabalho: Básico sobre JSON; Transformar o site anterior em um aplicativo através de application manifest para armazenamento dados.
+- Sexto trabalho: Básico sobre JSON; Transformar o site anterior em um aplicativo através de application manifest para armazenamento de dados.
 
 ### api - https://victorrschmidt.github.io/dbo2022/api
 
