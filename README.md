@@ -20,7 +20,7 @@ Este repositório foi utilizado para armazenar os arquivos de trabalhos de Desen
 
 ### trab_css_final - <a href="https://victorrschmidt.github.io/dbo2022/trab_css_final/pokesoft/In%C3%ADcio">Ir à pagina</a>
 
-- Quarto trabalho: Reestruturação do trabalho de HMTL-CSS utilizando flexbox e grid de CSS para deixá-lo responsivo. Aplicação de DOM com Javascript para adicionar funcionalidades para os formulários (verificação e prevenção de erros).
+- Quarto trabalho: Reestruturação do trabalho de HMTL-CSS utilizando flexbox e grid de CSS para deixá-lo responsivo; Aplicação de DOM com Javascript para adicionar funcionalidades para os formulários (verificação e prevenção de erros).
 
 ### jogo_exemplo - <a href="https://victorrschmidt.github.io/dbo2022/jogo_exemplo/versao_final">Ir à pagina</a> 
 
