@@ -6,7 +6,7 @@ Este repositório foi utilizado para armazenar os arquivos de trabalhos de Desen
 
 ## Trabalhos
 
-### trab1 - <a href="https://victorrschmidt.github.io/dbo2022/trab1">Ir à pagina</a>
+### trab1 - <a href="https://victorrschmidt.github.io/dbo2022/trab1" target="_blank">Ir à pagina</a>
 
 - Primeiro trabalho: Básico sobre tags e estruturação de um arquivo HTML.
 
