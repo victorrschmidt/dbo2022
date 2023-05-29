@@ -10,7 +10,7 @@ Este repositório foi utilizado para armazenar os arquivos de trabalhos de Desen
 
 - Primeiro trabalho: Básico sobre tags e estruturação de um arquivo HTML.
 
-### trab_site_css - https://victorrschmidt.github.io/dbo2022/trab_site_css/pokesoft/In%C3%ADcio
+### trab_site_css - <a href="https://victorrschmidt.github.io/dbo2022/trab_site_css/pokesoft/In%C3%ADcio">Ir à pagina</a>
 
 - Segundo trabalho: Criar um site fictício utilizando HTML-CSS.
  
